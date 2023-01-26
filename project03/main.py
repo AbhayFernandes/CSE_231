@@ -1,4 +1,19 @@
-# 30-year fixed rate mortgage, 30 years * 12 monthly payments
+###########################################################
+#  Computer Project #3
+#
+#  Algorithm
+#    prompt user for all the variables required
+#        begin by doing basic computations \
+#        nescessary for all branches.
+#        branch off based on the code the user inputted.
+#            complete the computations required for only that branch
+#        output the same generic format with the calculated values
+#        output the amortization table should the user want it
+#        loop back to prompting the user based on the input of the user
+###########################################################
+
+
+# CONSTANTS ---------------------------------------------------------------
 NUMBER_OF_PAYMENTS = 360
 SEATTLE_PROPERTY_TAX_RATE = 0.0092
 SAN_FRANCISCO_PROPERTY_TAX_RATE = 0.0074
@@ -12,16 +27,25 @@ EAST_LANSING_PRICE_PER_SQ_FOOT = 170.0
 AVERAGE_NATIONAL_PRICE_PER_SQ_FOOT = 244.0
 APR_2023 = 0.0668 * 100
 
-
+# FUNCTIONS ---------------------------------------------------------------
 def get_monthly_payment(P, I, N):
-    """Return the monthly payment for a mortgage loan."""
+    """Return the monthly payment for a mortgage loan.
+    P = principal
+    I = annual interest rate
+    N = number of payments
+    Returns the monthly payment for a mortgage loan.
+    """
     I = (I / 100) / 12
     return P * (I * (1 + I) ** N) / ((1 + I) ** N - 1)
 
 
 def get_principal(M, I, N):
     """Return the maximum principal that can be 
-    purchased with a given monthly payment."""
+    purchased with a given monthly payment.
+    M = monthly payment
+    I = annual interest rate
+    N = number of payments
+    Returns the maximum principal that can be purchased with a given monthly payment."""
     I = (I / 100) / 12
     num = M * ((1 + I) ** N - 1)
     denom = I * (1 + I) ** N
@@ -29,11 +53,19 @@ def get_principal(M, I, N):
 
 
 def get_monthly_taxes(home_price, tax_rate):
-    """Return the monthly property tax for a home."""
+    """Return the monthly property tax for a home.
+    home_price = price of the home
+    tax_rate = property tax rate
+    Returns the monthly property tax for a home."""
     return home_price * (tax_rate / 12)
 
 
 def print_amortization_table(monthly_payment, APR, principal):
+    """Print an amortization table for a mortgage loan.
+    monthly_payment = monthly payment
+    APR = annual percentage rate
+    principal = principal
+    Prints an amortization table for a mortgage loan."""
     balance = principal
     print(f"\n{'Month':^7}|{'Interest':^12}|{'Principal':^13}|{'Balance':^14}")
     print("================================================")
@@ -45,7 +77,7 @@ def print_amortization_table(monthly_payment, APR, principal):
         balance -= principal
 
 
-""" WRITE YOUR CODE USING THE CONSTANT VALUES ABOVE """
+# MAIN --------------------------------------------------------------------
 done = False
 while not done:
     print("\nMORTGAGE PLANNING CALCULATOR\n============================ ")

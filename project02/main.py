@@ -39,6 +39,7 @@ while done != 'B':
         odometer_start = input("\nOdometer reading at the start: ")
         odometer_end = input("\nOdometer reading at the end:   ")
         days = int(days)
+        cost = 0
         num_miles = ((int(odometer_end) - int(odometer_start))/10)
 
         # Handle if the odometer reading is less than the starting reading
