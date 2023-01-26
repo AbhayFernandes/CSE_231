@@ -1,4 +1,5 @@
-NUMBER_OF_PAYMENTS = 360  # 30-year fixed rate mortgage, 30 years * 12 monthly payments
+# 30-year fixed rate mortgage, 30 years * 12 monthly payments
+NUMBER_OF_PAYMENTS = 360
 SEATTLE_PROPERTY_TAX_RATE = 0.0092
 SAN_FRANCISCO_PROPERTY_TAX_RATE = 0.0074
 AUSTIN_PROPERTY_TAX_RATE = 0.0181
@@ -19,7 +20,8 @@ def get_monthly_payment(P, I, N):
 
 
 def get_principal(M, I, N):
-    """Return the maximum principal that can be purchased with a given monthly payment."""
+    """Return the maximum principal that can be 
+    purchased with a given monthly payment."""
     I = (I / 100) / 12
     num = M * ((1 + I) ** N - 1)
     denom = I * (1 + I) ** N
@@ -38,7 +40,8 @@ def print_amortization_table(monthly_payment, APR, principal):
     for i in range(1, NUMBER_OF_PAYMENTS + 1):
         interest = balance * ((APR / 100) / 12)
         principal = monthly_payment - interest
-        print(f"{i:^7d}| ${interest:>9.2f} | ${principal:>10.2f} | ${balance:>11.2f}")
+        print(f"{i:^7d}| ${interest:>9.2f} |",
+        f"${principal:>10.2f} | ${balance:>11.2f}")
         balance -= principal
 
 
@@ -46,13 +49,18 @@ def print_amortization_table(monthly_payment, APR, principal):
 done = False
 while not done:
     print("\nMORTGAGE PLANNING CALCULATOR\n============================ ")
-    print("\nEnter a value for each of the following items or type 'NA' if unknown ")
+    print("\nEnter a value for each of the "\
+        "following items or type 'NA' if unknown ")
     location = input(
-        "\nWhere is the house you are considering (Seattle, San Francisco, Austin, East Lansing)? "
+        "\nWhere is the house you are considering "\
+        "(Seattle, San Francisco, Austin, East Lansing)? "
     )
-    sq_feet = input("\nWhat is the maximum square footage you are considering? ")
-    monthly_payment = input("\nWhat is the maximum monthly payment you can afford? ")
-    down_payment = input("\nHow much money can you put down as a down payment? ")
+    sq_feet = input("\nWhat is the maximum square "\
+        "footage you are considering? ")
+    monthly_payment = input("\nWhat is the maximum monthly payment "\
+        "you can afford? ")
+    down_payment = input("\nHow much money can you put "\
+        "down as a down payment? ")
     apr = input("\nWhat is the current annual percentage rate? ")
 
     if location == "Seattle":
@@ -72,12 +80,14 @@ while not done:
         price_per_sq_foot = AVERAGE_NATIONAL_PRICE_PER_SQ_FOOT
         location = "the average U.S. housing market"
         print(
-            "\nUnknown location. Using national averages for price per square foot and tax rate."
+            "\nUnknown location. Using national averages "\
+            "for price per square foot and tax rate."
         )
 
     if sq_feet == "NA" and monthly_payment == "NA":
         print(
-            "\nYou must either supply a desired square footage or a maximum monthly payment. Please try again."
+            "\nYou must either supply a desired square footage "\
+            "or a maximum monthly payment. Please try again."
         )
         continue
 
@@ -100,24 +110,31 @@ while not done:
         monthly_taxes = get_monthly_taxes((sq_feet * price_per_sq_foot), tax)
 
         print(
-            f"\n\nIn {location}, an average {sq_feet:.0f} sq. foot house would cost ${(sq_feet * price_per_sq_foot):.0f}."
+            f"\n\nIn {location}, an average {sq_feet:.0f} sq. foot house "\
+            f"would cost ${(sq_feet * price_per_sq_foot):.0f}."
         )
         print(
-            f"A 30-year fixed rate mortgage with a down payment of ${down_payment:.0f} at {apr:.1f}% APR results"
+            f"A 30-year fixed rate mortgage with a down payment of "\
+            f"${down_payment:.0f} at {apr:.1f}% APR results"
         )
         print(
-            f"\tin an expected monthly payment of ${monthly_taxes:.2f} (taxes) + ${calculated_monthly_payment:.2f} (mortgage payment) = ${(monthly_taxes + calculated_monthly_payment):.2f}"
+            f"\tin an expected monthly payment of ${monthly_taxes:.2f} "\
+            f"(taxes) + ${calculated_monthly_payment:.2f} (mortgage payment) "\
+            f"= ${(monthly_taxes + calculated_monthly_payment):.2f}"
         )
 
         if monthly_payment != "NA":
             monthly_payment = float(monthly_payment)
-            if (monthly_taxes + calculated_monthly_payment) > monthly_payment:
+            tot_monthly_payment = monthly_taxes + calculated_monthly_payment
+            if (tot_monthly_payment) > monthly_payment:
                 print(
-                    f"Based on your maximum monthly payment of ${monthly_payment:.2f} you cannot afford this house."
+                    f"Based on your maximum monthly payment of "\
+                    f"${monthly_payment:.2f} you cannot afford this house."
                 )
-            elif (monthly_taxes + calculated_monthly_payment) <= monthly_payment:
+            elif (tot_monthly_payment) <= monthly_payment:
                 print(
-                    f"Based on your maximum monthly payment of ${monthly_payment:.2f} you can afford this house."
+                    f"Based on your maximum monthly payment of "\
+                    f"${monthly_payment:.2f} you can afford this house."
                 )
         else:
             pass
@@ -141,12 +158,17 @@ while not done:
         )
         monthly_taxes = get_monthly_taxes((sq_feet * price_per_sq_foot), tax)
         print(
-            f"\n\nIn {location}, a maximum monthly payment of ${float(monthly_payment):.2f} allows the purchase of a house of {sq_feet:.0f} sq. feet for ${(sq_feet * price_per_sq_foot):.0f}"
+            f"\n\nIn {location}, a maximum monthly payment of "\
+            f"${float(monthly_payment):.2f} allows the purchase "\
+            f"of a house of {sq_feet:.0f} sq. feet for "\
+            f"${(sq_feet * price_per_sq_foot):.0f}"
         )
         print(
-            f"\t assuming a 30-year fixed rate mortgage with a ${down_payment:.0f} down payment at {apr:.1f}% APR."
+            f"\t assuming a 30-year fixed rate mortgage with "\
+            f"a ${down_payment:.0f} down payment at {apr:.1f}% APR."
         )
 
-    done_str = input("\nWould you like to make another attempt (Y or N)? ").lower()
+    done_str = input("\nWould you like to make "\
+        "another attempt (Y or N)? ").lower()
     if done_str != "y":
         break
