@@ -38,10 +38,10 @@ def print_amortization_table(monthly_payment, APR, principal):
         balance -= principal
 
 ''' WRITE YOUR CODE USING THE CONSTANT VALUES ABOVE '''
-print("\nMORTGAGE PLANNING CALCULATOR\n============================ ")
-print("\nEnter a value for each of the following items or type 'NA' if unknown ")
 done = False
 while not done:
+    print("\nMORTGAGE PLANNING CALCULATOR\n============================ ")
+    print("\nEnter a value for each of the following items or type 'NA' if unknown ")
     location = input("\nWhere is the house you are considering (Seattle, San Francisco, Austin, East Lansing)? ")
     sq_feet = input("\nWhat is the maximum square footage you are considering? ")
     monthly_payment = input("\nWhat is the maximum monthly payment you can afford? ")
