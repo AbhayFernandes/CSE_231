@@ -33,7 +33,8 @@ def get_monthly_payment(P, I, N):
     P = principal
     I = annual interest rate
     N = number of payments
-    Returns the monthly payment for a mortgage loan.
+    Returns the monthly payment for a mortgage loan. Produced with given
+    Formula.
     """
     I = (I / 100) / 12
     return P * (I * (1 + I) ** N) / ((1 + I) ** N - 1)
@@ -45,7 +46,9 @@ def get_principal(M, I, N):
     M = monthly payment
     I = annual interest rate
     N = number of payments
-    Returns the maximum principal that can be purchased with a given monthly payment."""
+    Returns the maximum principal that can 
+    be purchased with a given monthly payment.
+    Essentially, this is the inverse of the get_monthly_payment function."""
     I = (I / 100) / 12
     num = M * ((1 + I) ** N - 1)
     denom = I * (1 + I) ** N
@@ -83,6 +86,7 @@ while not done:
     print("\nMORTGAGE PLANNING CALCULATOR\n============================ ")
     print("\nEnter a value for each of the "\
         "following items or type 'NA' if unknown ")
+    # Get user input for all variables
     location = input(
         "\nWhere is the house you are considering "\
         "(Seattle, San Francisco, Austin, East Lansing)? "
@@ -95,6 +99,8 @@ while not done:
         "down as a down payment? ")
     apr = input("\nWhat is the current annual percentage rate? ")
 
+
+    # Set the tax rate and price per square foot based on location
     if location == "Seattle":
         tax = SEATTLE_PROPERTY_TAX_RATE
         price_per_sq_foot = SEATTLE_PRICE_PER_SQ_FOOT
@@ -116,6 +122,7 @@ while not done:
             "for price per square foot and tax rate."
         )
 
+    # Handle invalid input of NA for all variables
     if sq_feet == "NA" and monthly_payment == "NA":
         print(
             "\nYou must either supply a desired square footage "\
@@ -123,6 +130,7 @@ while not done:
         )
         continue
 
+    # Handle input of NA for down payment and APR
     if down_payment == "NA":
         down_payment = 0
     else:
@@ -133,6 +141,7 @@ while not done:
     else:
         apr = float(apr)
 
+    # Branch based on whether the user supplied a desired square footage
     if sq_feet != "NA":
         sq_feet = float(sq_feet)
         principal = (sq_feet * price_per_sq_foot) - down_payment
@@ -155,6 +164,7 @@ while not done:
             f"= ${(monthly_taxes + calculated_monthly_payment):.2f}"
         )
 
+        #branch based on whether the user supplied a maximum monthly payment
         if monthly_payment != "NA":
             monthly_payment = float(monthly_payment)
             tot_monthly_payment = monthly_taxes + calculated_monthly_payment
@@ -179,7 +189,9 @@ while not done:
         else:
             pass
 
+    #branch whether the user supplied a maximum monthly payment
     else:
+        #calculate the maximum square footage that can be purchased
         sq_feet = (
             get_principal(float(monthly_payment), apr, NUMBER_OF_PAYMENTS)
             + down_payment
@@ -199,7 +211,7 @@ while not done:
             f"\t assuming a 30-year fixed rate mortgage with "\
             f"a ${down_payment:.0f} down payment at {apr:.1f}% APR."
         )
-
+    # Ask the user if they want to make another attempt
     done_str = input("\nWould you like to make "\
         "another attempt (Y or N)? ").lower()
     if done_str != "y":
