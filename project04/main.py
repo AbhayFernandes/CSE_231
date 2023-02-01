@@ -9,18 +9,34 @@ MENU = '''\nPlease choose one of the options below:
             D. Decode an image.
             M. Display the menu of options.
             X. Exit from the program.'''
-    
+BANNER = '''
+               A long time ago in a galaxy far, far away...   
+              A terrible civil war burns throughout the galaxy.      
+  ~~ Your mission: Tatooine planet is under attack from stormtroopers,
+                   and there is only one line of defense remaining        
+                   It is up to you to stop the invasion and save the planet~~
+    '''
+
+
 def numtobase( N, B ):
     '''convert a number N to a different base system B'''
     string = ""
+    if N == 0:
+        return ""
     while N > 0:
         remainder = N % B
         N = N // B
         string += str(remainder)
-    return int(string)
+    # add leading zeroes to make the string length a multiple of 8
+    while len(string) % 8 != 0:
+        string += "0"
+    return string[::-1]
 
 def basetonum( S, B ):
     '''convert a number S from another base system B to a decimal number'''
+    if S == "":
+        return 0
+    S = int(S)
     num = 0
     for i in range(1, len(str(S))+1):
         digit = S % 10
@@ -34,29 +50,40 @@ def basetobase(B1,B2,s_in_B1):
     N = basetonum(s_in_B1, B1)
     return numtobase(N, B2)
 
+def convert_to_binary(S):
+    '''convert a string S to a binary string'''
+    binary = ""
+    for i in S:
+        binary += numtobase(ord(i), 2)
+    return binary
+
 def encode_image(image,text,N):
-    '''Insert docstring here.'''
+    '''take a string representing the binary representation of a string, text which is to be encoded using LSB and N representing how many bits per pixel'''
+    new_image = ""
+    text_to_binary = convert_to_binary(text)
+    for i in range(0, len(image), N):
+        try:
+            new_bit = image[i:i+N]
+            new_bit = new_bit[:N-1] + text_to_binary[0]
+            text_to_binary = text_to_binary[1:]
+            new_image += new_bit
+        except IndexError:
+            new_image += image[i:i+N]
+    return new_image
 
 
-
-def decode_image(sego,N):
-    '''Insert docstring here.'''
+def decode_image(stego,N):
+    '''Take an image stego and extract the encoded text using LSB and N representing how many bits per pixel'''
+    binary_text = ""
+    output_string = ""
+    for i in range(N-1, len(stego), N):
+        binary_text += stego[i]
+    for i in range(0, len(binary_text), 8):
+        output_string += chr(basetonum(binary_text[i:i+8], 2))
+    return output_string
 
 def main():
-    BANNER = '''
-               A long time ago in a galaxy far, far away...   
-              A terrible civil war burns throughout the galaxy.      
-  ~~ Your mission: Tatooine planet is under attack from stormtroopers,
-                   and there is only one line of defense remaining        
-                   It is up to you to stop the invasion and save the planet~~
-    '''
-
     print(BANNER)
-    
-    B = int(input("Input Base"))
-    N = int(input("Input Number"))
-    print(basetonum(N, B))
-
     pass  # insert your code here
 
 # These two lines allow this program to be imported into other code
