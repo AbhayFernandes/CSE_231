@@ -85,8 +85,27 @@ def decode_image(stego, N):
 
 def main():
     print(BANNER)
-    print(MENU)
-    
+    while True:
+        print(MENU)
+        option = input("\n\tEnter option: ").upper()
+        if option == 'M':
+            pass
+        elif option == 'A':
+            num = "\n\tEnter N: "
+            base = "\n\tEnter Base: "
+        elif option == 'B':
+            pass
+        elif option == 'C':
+            pass
+        elif option == 'E':
+            pass
+        elif option == 'D':
+            pass
+        elif option == 'X':
+            break
+        else:
+            print(f"\nError:  unrecognized option [{option}]")
+    print('\nMay the force be with you.')
 # These two lines allow this program to be imported into other code
 # such as our function tests code allowing other functions to be run
 # and tested without 'main' running.  However, when this program is
