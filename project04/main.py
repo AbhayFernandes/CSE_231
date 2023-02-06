@@ -72,12 +72,13 @@ def encode_image(image,text,N):
     return new_image
 
 
-def decode_image(stego,N):
+def decode_image(stego, N):
     '''Take an image stego and extract the encoded text using LSB and N representing how many bits per pixel'''
     binary_text = ""
     output_string = ""
     for i in range(N-1, len(stego), N):
         binary_text += stego[i]
+    binary_text = binary_text[:len(binary_text) - len(binary_text) % 8]
     for i in range(0, len(binary_text), 8):
         output_string += chr(basetonum(binary_text[i:i+8], 2))
     return output_string
