@@ -2,13 +2,13 @@
 
 
 MENU = '''\nPlease choose one of the options below:
-            A. Convert a decimal number to another base system         
-            B. Convert decimal number from another base.
-            C. Convert from one representation system to another.
-            E. Encode an image with a text.
-            D. Decode an image.
-            M. Display the menu of options.
-            X. Exit from the program.'''
+             A. Convert a decimal number to another base system         
+             B. Convert decimal number from another base.
+             C. Convert from one representation system to another.
+             E. Encode an image with a text.
+             D. Decode an image.
+             M. Display the menu of options.
+             X. Exit from the program.'''
 BANNER = '''
                A long time ago in a galaxy far, far away...   
               A terrible civil war burns throughout the galaxy.      
@@ -85,8 +85,8 @@ def decode_image(stego, N):
 
 def main():
     print(BANNER)
-    pass  # insert your code here
-
+    print(MENU)
+    
 # These two lines allow this program to be imported into other code
 # such as our function tests code allowing other functions to be run
 # and tested without 'main' running.  However, when this program is
