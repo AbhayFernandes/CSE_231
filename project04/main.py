@@ -83,16 +83,46 @@ def decode_image(stego, N):
         output_string += chr(basetonum(binary_text[i:i+8], 2))
     return output_string
 
+def input_positive_int(prompt):
+    while True:
+        num = input(prompt)
+        try:
+            num = int(num)
+        except ValueError:
+            print("\n\tError: {} was not a valid non-negative integer.".format(num))
+            continue
+        if num < 0:
+            print("\n\tError: {} was not a valid non-negative integer.".format(num))
+            continue
+        return num
+
+def input_valid_base(prompt):
+    while True:
+        base = input(prompt)
+        try:
+            base = int(base)
+        except ValueError:
+            print("\n\tError: {} was not a valid non-negative integer.".format(base))
+            continue
+        if base < 0:
+            print("\n\tError: {} was not a valid non-negative integer.".format(base))
+            continue
+        if base < 2 or base > 10:
+            print("\n\tError: {} was not a valid integer between 2 and 10 inclusive.".format(base))
+            continue
+        return base
+
 def main():
     print(BANNER)
+    print(MENU)
     while True:
-        print(MENU)
         option = input("\n\tEnter option: ").upper()
         if option == 'M':
-            pass
+            print(MENU)
         elif option == 'A':
-            num = "\n\tEnter N: "
-            base = "\n\tEnter Base: "
+            num = input_positive_int("\n\tEnter N: ")
+            base = input_valid_base("\n\tEnter Base: ")
+            print(f"\n\t {num} in base {base}: {numtobase(num, base)}")
         elif option == 'B':
             pass
         elif option == 'C':
@@ -105,6 +135,7 @@ def main():
             break
         else:
             print(f"\nError:  unrecognized option [{option}]")
+            print(MENU)
     print('\nMay the force be with you.')
 # These two lines allow this program to be imported into other code
 # such as our function tests code allowing other functions to be run
