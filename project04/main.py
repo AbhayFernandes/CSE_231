@@ -161,7 +161,7 @@ def main():
             S = input("\n\tEnter string number: ")
             print(
                 f"\n\t {S} in base {B1} is",
-                "{basetobase(B1, B2, S)} in base {B2}..."
+                f"{basetobase(B1, B2, S)} in base {B2}..."
             )
         elif option == "E":
             S = input("\n\tEnter a binary string of an image: ")
