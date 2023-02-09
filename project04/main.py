@@ -197,34 +197,34 @@ def main():
             print(f"\n\t {num} in base {base}: {numtobase(num, base)}")
         elif option == "B":
             # get the string and base from the user, ouput the result
-            S = input("\n\tEnter string number S: ")
-            B = input_valid_base("\n\tEnter Base: ")
-            print(f"\n\t {S} in base {B}: {basetonum(S, B)}")
+            string = input("\n\tEnter string number S: ")
+            base = input_valid_base("\n\tEnter Base: ")
+            print(f"\n\t {string} in base {base}: {basetonum(string, base)}")
         elif option == "C":
             # get the number, base and new base from the user, ouput the result
-            B1 = input_valid_base("\n\tEnter base B1: ")
-            B2 = input_valid_base("\n\tEnter base B2: ")
-            S = input("\n\tEnter string number: ")
+            base_1 = input_valid_base("\n\tEnter base B1: ")
+            base_2 = input_valid_base("\n\tEnter base B2: ")
+            string = input("\n\tEnter string number: ")
             print(
-                f"\n\t {S} in base {B1} is",
-                f"{basetobase(B1, B2, S)} in base {B2}..."
+                f"\n\t {string} in base {base_1} is",
+                f"{basetobase(base_1, base_2, string)} in base {base_2}..."
             )
         elif option == "E":
             # get the image, number of bits per pixel and text from the user
-            S = input("\n\tEnter a binary string of an image: ")
+            img_string = input("\n\tEnter a binary string of an image: ")
             bits = input_positive_int(
                 "\n\tEnter number of bits used for pixels: "
             )
-            text = input("\n\tEnter a text to hide in the image: ")
+            hidden_text = input("\n\tEnter a text to hide in the image: ")
             # check if the text can be encoded in the image
-            if len(text) * 8 > len(S) // bits:
+            if len(hidden_text) * 8 > len(img_string) // bits:
                 print(
                     "\n\tImage not big enough to",
                     "hold all the text to steganography"
                 )
             else:
-                print(f"\n\t Original image: {S}")
-                print(f"\n\t Encoded image: {encode_image(S, text, bits)}")
+                print(f"\n\t Original image: {img_string}")
+                print(f"\n\t Encoded image: {encode_image(img_string, hidden_text, bits)}")
         elif option == "D":
             # get the image and number of bits per pixel from the user
             stego = input("\n\tEnter an encoded string of an image: ")
