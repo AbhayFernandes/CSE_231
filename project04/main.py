@@ -1,5 +1,33 @@
-""" Insert heading comments here."""
-
+###########################################################
+#  Computer Project #3
+#
+#  Algorithm
+#    get the user's choice
+#    if the user wants to convert a decimal number to another base system
+#       get the number and base from the user, 
+#       call the function to convert the number to the base system
+#       output the result
+#    if the user wants to convert a decimal number from another base system
+#       get the number and base from the user
+#       call the function to convert the number from the base system to decimal
+#       output the result
+#    if the user wants to convert from one representation system to another
+#       get the number and base from the user
+#       call the function to convert the number from the base system to decimal
+#       call the function to convert the number to the base system
+#    if the user wants to encode an image with a text
+#       get the image, text, and N from the user
+#       call the function to encode the image with the text
+#       output the result
+#    if the user wants to decode an image
+#       get the image and N from the user
+#       call the function to decode the image
+#       output the result
+#    if the user wants to display the menu of options
+#       display the menu
+#    if the user wants to exit the program
+#       exit the program
+###########################################################
 
 MENU = """\nPlease choose one of the options below:
              A. Convert a decimal number to another base system         
