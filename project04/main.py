@@ -61,7 +61,9 @@ def convert_to_binary(S):
 
 
 def encode_image(image, text, N):
-    """take a string representing the binary representation of a string, text which is to be encoded using LSB and N representing how many bits per pixel"""
+    """take a string representing the binary representation of a string, 
+    text which is to be encoded using LSB and N representing how 
+    many bits per pixel"""
     new_image = ""
     text_to_binary = convert_to_binary(text)
     for i in range(0, len(image), N):
@@ -76,7 +78,8 @@ def encode_image(image, text, N):
 
 
 def decode_image(stego, N):
-    """Take an image stego and extract the encoded text using LSB and N representing how many bits per pixel"""
+    """Take an image stego and extract the encoded text using 
+    LSB and N representing how many bits per pixel"""
     binary_text = ""
     output_string = ""
     for i in range(N - 1, len(stego), N):
@@ -130,9 +133,8 @@ def input_valid_base(prompt):
             continue
         if base < 2 or base > 10:
             print(
-                "\n\tError: {} was not a valid integer between 2 and 10 inclusive.".format(
-                    base
-                )
+                f"\n\tError: {base} was not a valid",
+                "integer between 2 and 10 inclusive."
             )
             continue
         return base
@@ -158,7 +160,8 @@ def main():
             B2 = input_valid_base("\n\tEnter base B2: ")
             S = input("\n\tEnter string number: ")
             print(
-                f"\n\t {S} in base {B1} is {basetobase(B1, B2, S)} in base {B2}..."
+                f"\n\t {S} in base {B1} is",
+                "{basetobase(B1, B2, S)} in base {B2}..."
             )
         elif option == "E":
             S = input("\n\tEnter a binary string of an image: ")
@@ -169,7 +172,8 @@ def main():
             # check if the text can be encoded in the image
             if len(text) * 8 > len(S) // bits:
                 print(
-                    "\n\tImage not big enough to hold all the text to steganography"
+                    "\n\tImage not big enough to",
+                    "hold all the text to steganography"
                 )
             else:
                 print(f"\n\t Original image: {S}")
