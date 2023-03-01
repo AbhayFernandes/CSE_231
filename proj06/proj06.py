@@ -1,8 +1,12 @@
 import csv
+from typing import Tuple, IO
+import os
 from operator import itemgetter
 
 TITLE = 1
+AUTHOR = 2
 CATEGORY = 3
+DESCRIPTION = 4
 YEAR = 5
 RATING = 6
 PAGES = 7
@@ -22,44 +26,97 @@ CRITERIA_INPUT = "\nChoose the following criteria\n\
                  (7) Page Number (within 50 pages) \n\
                  Enter criteria number: "
 
-def open_file():
-    """Docstring"""
-    pass
+def open_file() -> IO:
+    ''' open file and return file pointer'''
+    while True:
+        filename = input("\nEnter filename: ")
+        filepath = os.path.join(os.path.dirname(__file__), filename)
+        try:
+            fp = open(filepath, "r", encoding="utf-8")
+        except:
+            print("\nFile not found!")
+            continue
+        return fp
 
-def read_file(fp):
-    """Docstring"""
-    pass
 
-def get_books_on_criterion(list_of_tuples, criterion, value):
+def read_file(fp: IO) -> list[Tuple]:
     """Docstring"""
-    pass
+    output = []
+    reader = csv.reader(fp, delimiter=',')
+    #skip first line:
+    next(reader)
+    for line in reader:
+        output.append((line[0], line[2], line[4], line[5].lower().split(","), line[7], line[8], float(line[9]), int(line[10]), int(line[11])))
+    return output
 
-def get_books_by_criteria(list_of_tuples, category, rating, page_number):
+
+def get_books_by_criterion(list_of_tuples: list[Tuple], criterion: int, value: int | float | str) -> list[Tuple] | Tuple:
     """Docstring"""
-    pass
+    output = []
+    if criterion == TITLE:
+        for book in list_of_tuples:
+            if value.lower() == book[TITLE].lower():
+                return book
+    elif criterion == CATEGORY:
+        for book in list_of_tuples:
+            if value.lower() in book[CATEGORY]:
+                output.append(book)
+        return output
+    elif criterion == YEAR:
+        for book in list_of_tuples:
+            if value == book[YEAR]:
+                output.append(book)
+        return output
+    elif criterion == RATING:
+        for book in list_of_tuples:
+            if value <= book[RATING]:
+                print(book[RATING])
+                output.append(book)
+        return output
+    elif criterion == PAGES:
+        for book in list_of_tuples:
+            if (value - 50) <= book[PAGES] <= (value + 50):
+                output.append(book)
+        return output
+    return []
+
+
+def get_books_by_criteria(list_of_tuples: list[Tuple], category: str, rating: float, pages: int):
+    """Docstring"""
+    output = get_books_by_criterion(list_of_tuples, CATEGORY, category)
+    output = get_books_by_criterion(output, RATING, rating)
+    output = get_books_by_criterion(output, PAGES, pages)
+    return output
+
 
 def get_books_by_keyword(list_of_tuples, keywords):
-    """Docstring"""
-    pass
+    output = []
+    for book in list_of_tuples:
+        for keyword in keywords:
+            if keyword.lower() in book[DESCRIPTION].lower():
+                output.append(book)
+                break
+    return output
 
-def sort_authors(list_of_tuples, a_z):
-    """Docstring"""
-    pass
 
-def recommend_books(list_of_tuples, keywords, category, rating, page_number,  a_z):
+def recommend_books(list_of_tuples: list[Tuple], keywords, category, rating, page_number, a_z: bool) -> list[Tuple]:
     """Docstring"""
-    pass
+    output = get_books_by_keyword(list_of_tuples, keywords)
+    output = get_books_by_criteria(output, category, rating, page_number)
+    output = sort_authors(output, a_z)
+    return output
 
-def display_books(list_of_tuples):
-    """Docstring"""
-    pass
 
-def get_option():
-    """Docstring"""
-    pass
+def sort_authors(list_of_tuples, a_z=True) -> list[Tuple]:
+    output = list_of_tuples.copy()
+    output.sort(key=itemgetter(AUTHOR), reverse=not a_z)
+    return output
+
 
 def main():
-    pass
+    fp = open_file()
+    list_of_tuples = read_file(fp)
+    print(list_of_tuples)
 
 
 # DO NOT CHANGE THESE TWO LINES
