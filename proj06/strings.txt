@@ -1,0 +1,18 @@
+"Enter file name: "
+"\nError opening file. Please try again."
+"\nInput a book title: "
+"\nInvalid input"
+"\nInvalid option"
+"\nEnter value: "
+"\nBook Details:"
+"\nEnter the desired category: "
+"\nEnter the desired rating: "
+"\nEnter the desired page number: "
+"\nEnter 1 for A-Z sorting, and 2 for Z-A sorting: "
+"\nEnter keywords (space separated): "
+"Nothing to print."
+
+
+
+
+
