@@ -187,7 +187,7 @@ def main():
             if criterion == 3:
                 value = input("\nEnter value: ")
             elif criterion == 5:
-                value = get_valid_float(prompt="\nEnter value: ")
+                value = input("\nEnter value: ")
             elif criterion == 6:
                 value = get_valid_float(prompt="\nEnter value: ")
             elif criterion == 7:
