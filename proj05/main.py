@@ -1,4 +1,21 @@
-''' Insert heading comments here.'''
+###########################################################
+#  Computer Project #3
+#
+#  Algorithm
+#    open the file
+#    loop through each line in the file
+#       grab the title and strip the whitespace
+#       grab the score and episodes
+#       check if the score and episodes are not "N/A"
+#       if they are not "N/A"
+#          convert the score and episodes to floats
+#          find the max score and the min score
+#          find the max episodes and the min episodes
+#          add the score and episodes to the total score and total episodes
+#          increment the counter
+#    calculate the average score and average episodes
+#    output the results to the user
+###########################################################
 from typing import Tuple, IO
 import os
 
@@ -6,6 +23,7 @@ def open_file() -> IO:
     ''' open file and return file pointer'''
     while True:
         filename = input("\nEnter filename: ")
+        # grab the absolute path to the file and join with the filename
         filepath = os.path.join(os.path.dirname(__file__), filename)
         try:
             fp = open(filepath, "r", encoding="utf-8")
@@ -15,8 +33,10 @@ def open_file() -> IO:
         return fp
     pass  # insert your code here
     
-def find_max(num: float, name: str, max_num: str, max_name: str) -> Tuple[float, str]:
-    ''' find the max number and return the max number and the name of the max number'''
+def find_max(num: float, name: str, max_num: float, max_name: str) \
+    -> Tuple[float, str]:
+    ''' find the max number and return the max 
+    number and the name of the max number'''
     if num < max_num:
         return max_num, max_name
     elif num > max_num:
@@ -25,8 +45,10 @@ def find_max(num: float, name: str, max_num: str, max_name: str) -> Tuple[float,
         return max_num, f"{max_name}\n\t{name}"
 
     
-def find_min(num: float, name: str, min_num: float, min_name: str) -> Tuple[float, str]:
-    ''' find the min number and return the min number and the name of the min number'''
+def find_min(num: float, name: str, min_num: float, min_name: str) \
+    -> Tuple[float, str]:
+    ''' find the min number and return the min 
+    number and the name of the min number'''
     if num > min_num:
         return min_num, min_name
     elif num < min_num:
@@ -36,7 +58,8 @@ def find_min(num: float, name: str, min_num: float, min_name: str) -> Tuple[floa
 
 
 def read_file(data_fp: IO) -> Tuple[float, str, float, str, float, str, float]:
-    '''read a file and determine the max and min score and max no. of episodes and the average score'''
+    '''read a file and determine the max and min score
+    and max no. of episodes and the average score'''
     max_score = 0
     max_score_name = 0
     max_episodes = 0
@@ -46,20 +69,31 @@ def read_file(data_fp: IO) -> Tuple[float, str, float, str, float, str, float]:
     total = 0
     count = 0
     for line in data_fp:
+        # grab the title and strip the whitespace
         title = line[0:100]
         title = title.strip()
+        # grab the score and episodes
         score = line[100:105]
         episodes = line[105:110]
+        # check if the score and episodes are not "N/A"
         if not ("N/A" in score):
+            # loop through each line and find the max and min score
+            # if the score is not "N/A", convert the score to a float
+            # and compute the average score
             score = float(score)
-            max_score, max_score_name = find_max(score, title, max_score, max_score_name)
-            min_score, min_score_name = find_min(score, title, min_score, min_score_name)
+            max_score, max_score_name = find_max(score, 
+            title, max_score, max_score_name)
+            min_score, min_score_name = find_min(score, 
+            title, min_score, min_score_name)
             total += score
             count += 1
         if not ("N/A" in episodes):
+            # loop through each line and find the max no. of episodes
             episodes = float(episodes)
-            max_episodes, max_episodes_name = find_max(episodes, title, max_episodes, max_episodes_name)
-    return max_score, max_score_name, max_episodes, max_episodes_name, min_score, min_score_name, round((total/count), 2)
+            max_episodes, max_episodes_name = find_max(episodes, 
+            title, max_episodes, max_episodes_name)
+    return max_score, max_score_name, max_episodes, max_episodes_name, \
+    min_score, min_score_name, round((total/count), 2)
 
 
 def search_anime(data_fp: IO, anime_name: str) -> Tuple[int, str]:
@@ -91,16 +125,20 @@ def main():
         option = input(MENU)
         if option == "1":
             fp = open_file()
-            max_score, max_score_name, max_episodes, max_episodes_name, min_score, min_score_name, avg_score = read_file(fp)
+            # call read_file and unpack the returned values
+            max_score, max_score_name, max_episodes, max_episodes_name, \
+            min_score, min_score_name, avg_score = read_file(fp)
             print(f"\n\nAnime with the highest score of {max_score}:")
             print(max_score_name)
-            print(f"\n\nAnime with the highest episode count of {max_episodes:,.0f}:")
+            print(f"\n\nAnime with the highest episode count of",
+            f"{max_episodes:,.0f}:")
             print(max_episodes_name)
             print(f"\n\nAnime with the lowest score of {min_score:.2f}:")
             print(min_score_name)
             print(f"\n\nAverage score for animes in file is {avg_score}")
             fp.close()
         elif option == "2":
+            # call search_anime and unpack the returned values
             fp = open_file()
             anime_name = input("\nEnter anime name: ")
             count, output = search_anime(fp, anime_name)

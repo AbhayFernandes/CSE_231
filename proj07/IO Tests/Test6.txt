@@ -1,0 +1,64 @@
+This program will take in csv files with weather data and compare the sets.
+The data is available for high, low, and average temperatures,
+precipitation, and snow and snow depth.
+Enter cities names: boston,lansing
+
+        Menu Options:
+        1. Highest value for a specific column for all cities
+        2. Lowest value for a specific column for all cities
+        3. Average value for a specific column for all cities
+        4. Modes for a specific column for all cities
+        5. Summary Statistics for a specific column for a specific city
+        6. High and low averages for each category across all data
+        7. Quit
+        Menu Choice: 6
+
+Enter a starting date (in mm/dd/yyyy format): 03/01/2000
+
+Enter an ending date (in mm/dd/yyyy format): 04/01/2020
+
+Enter desired categories seperated by comma: low temp,Snow
+
+High and low averages for each category across all data.
+
+        low temp:
+        Lowest Average: lansing = 39.21 Highest Average: boston = 44.91
+
+        snow:
+        Lowest Average: boston = 0.13 Highest Average: lansing = 0.15
+
+        Menu Options:
+        1. Highest value for a specific column for all cities
+        2. Lowest value for a specific column for all cities
+        3. Average value for a specific column for all cities
+        4. Modes for a specific column for all cities
+        5. Summary Statistics for a specific column for a specific city
+        6. High and low averages for each category across all data
+        7. Quit
+        Menu Choice: 6
+
+Enter a starting date (in mm/dd/yyyy format): 01/01/2000
+
+Enter an ending date (in mm/dd/yyyy format): 01/01/2020
+
+Enter desired categories seperated by comma: high Temp,preCipitation
+
+High and low averages for each category across all data.
+
+        high temp:
+        Lowest Average: lansing = 57.95 Highest Average: boston = 59.69
+
+        precipitation:
+        Lowest Average: lansing = 0.09 Highest Average: boston = 0.12
+
+        Menu Options:
+        1. Highest value for a specific column for all cities
+        2. Lowest value for a specific column for all cities
+        3. Average value for a specific column for all cities
+        4. Modes for a specific column for all cities
+        5. Summary Statistics for a specific column for a specific city
+        6. High and low averages for each category across all data
+        7. Quit
+        Menu Choice: 7
+
+Thank you using this program!

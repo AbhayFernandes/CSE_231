@@ -1,0 +1,68 @@
+This program will take in csv files with weather data and compare the sets.
+The data is available for high, low, and average temperatures,
+precipitation, and snow and snow depth.
+Enter cities names: anchorage,lansing
+
+        Menu Options:
+        1. Highest value for a specific column for all cities
+        2. Lowest value for a specific column for all cities
+        3. Average value for a specific column for all cities
+        4. Modes for a specific column for all cities
+        5. Summary Statistics for a specific column for a specific city
+        6. High and low averages for each category across all data
+        7. Quit
+        Menu Choice: 5
+
+Enter a starting date (in mm/dd/yyyy format): 03/01/2000
+
+Enter an ending date (in mm/dd/yyyy format): 04/01/2020
+
+Enter desired category: snow
+
+        snow:
+        anchorage:
+        Min: 0.00 Max: 22.00 Avg: 0.21
+        Most common repeated values (110 occurrences): 0.1
+
+        lansing:
+        Min: 0.00 Max: 14.50 Avg: 0.15
+        Most common repeated values (94 occurrences): 0.1
+
+
+        Menu Options:
+        1. Highest value for a specific column for all cities
+        2. Lowest value for a specific column for all cities
+        3. Average value for a specific column for all cities
+        4. Modes for a specific column for all cities
+        5. Summary Statistics for a specific column for a specific city
+        6. High and low averages for each category across all data
+        7. Quit
+        Menu Choice: 5
+
+Enter a starting date (in mm/dd/yyyy format): 01/01/2000
+
+Enter an ending date (in mm/dd/yyyy format): 01/01/2020
+
+Enter desired category: hiGh temp
+
+        high temp:
+        anchorage:
+        Min: -9.00 Max: 90.00 Avg: 44.89
+        Most common repeated values (386 occurrences): 60.0
+
+        lansing:
+        Min: 1.00 Max: 103.00 Avg: 57.95
+        Most common repeated values (363 occurrences): 80.0
+
+
+        Menu Options:
+        1. Highest value for a specific column for all cities
+        2. Lowest value for a specific column for all cities
+        3. Average value for a specific column for all cities
+        4. Modes for a specific column for all cities
+        5. Summary Statistics for a specific column for a specific city
+        6. High and low averages for each category across all data
+        7. Quit
+        Menu Choice: 7
+
+Thank you using this program!

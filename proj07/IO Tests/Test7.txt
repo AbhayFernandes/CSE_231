@@ -1,0 +1,96 @@
+This program will take in csv files with weather data and compare the sets.
+The data is available for high, low, and average temperatures,
+precipitation, and snow and snow depth.
+Enter cities names: anchorage60,anchorage70,paris,anchorage80,anchorage90,anchorage00,anchorage10,lansing_small
+
+Error: File paris.csv is not found
+
+        Menu Options:
+        1. Highest value for a specific column for all cities
+        2. Lowest value for a specific column for all cities
+        3. Average value for a specific column for all cities
+        4. Modes for a specific column for all cities
+        5. Summary Statistics for a specific column for a specific city
+        6. High and low averages for each category across all data
+        7. Quit
+        Menu Choice: 5
+
+Enter a starting date (in mm/dd/yyyy format): 01/01/1900
+
+Enter an ending date (in mm/dd/yyyy format): 01/01/2025
+
+Enter desired category: snowdepth
+
+        snowdepth category is not found.
+
+Enter desired category: High Temp
+
+        high temp:
+        anchorage60:
+        Min: -17.00 Max: 85.00 Avg: 42.65
+        Most common repeated values (188 occurrences): 62.0
+
+        anchorage70:
+        Min: -14.00 Max: 82.00 Avg: 42.46
+        Most common repeated values (167 occurrences): 60.0
+
+        anchorage80:
+        Min: -19.00 Max: 82.00 Avg: 43.71
+        Most common repeated values (192 occurrences): 58.0
+
+        anchorage90:
+        Min: -13.00 Max: 80.00 Avg: 43.53
+        Most common repeated values (192 occurrences): 62.0
+
+        anchorage00:
+        Min: -9.00 Max: 84.00 Avg: 44.13
+        Most common repeated values (214 occurrences): 60.0
+
+        anchorage10:
+        Min: -3.00 Max: 90.00 Avg: 45.66
+        Most common repeated values (172 occurrences): 60.0
+
+        lansing_small:
+        Min: 18.00 Max: 31.00 Avg: 25.50
+	No modes.
+
+        Menu Options:
+        1. Highest value for a specific column for all cities
+        2. Lowest value for a specific column for all cities
+        3. Average value for a specific column for all cities
+        4. Modes for a specific column for all cities
+        5. Summary Statistics for a specific column for a specific city
+        6. High and low averages for each category across all data
+        7. Quit
+        Menu Choice: 6
+
+Enter a starting date (in mm/dd/yyyy format): 01/01/1900
+
+Enter an ending date (in mm/dd/yyyy format): 01/01/2025
+
+Enter desired categories seperated by comma: snow,Price,Precipitation,High temp
+
+High and low averages for each category across all data.
+
+        snow:
+        Lowest Average: anchorage80 = 0.16 Highest Average: lansing_small = 1.75
+
+        price category is not found.
+
+        precipitation:
+        Lowest Average: anchorage60 = 0.04 Highest Average: lansing_small = 0.26
+
+        high temp:
+        Lowest Average: lansing_small = 25.50 Highest Average: anchorage10 = 45.66
+
+        Menu Options:
+        1. Highest value for a specific column for all cities
+        2. Lowest value for a specific column for all cities
+        3. Average value for a specific column for all cities
+        4. Modes for a specific column for all cities
+        5. Summary Statistics for a specific column for a specific city
+        6. High and low averages for each category across all data
+        7. Quit
+        Menu Choice: 7
+
+Thank you using this program!
