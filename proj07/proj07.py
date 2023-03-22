@@ -133,9 +133,9 @@ def remove_duplicates(lst):
 
 def multi_max(lst):
     output = []
-    max(lst, key=itemgetter(1))[1]
+    max_value = max(lst, key=itemgetter(1))[1]
     for i in lst:
-        if i[1] == max(lst, key=itemgetter(1))[1]:
+        if i[1] == max_value:
             output.append(i[0])
     return output
 
@@ -146,14 +146,16 @@ def mode(lst):
     streak_num = lst[0]
     streak_count = 1
     for i in range(1, len(lst)):
-        if tol_eq(lst[i], streak_num):
+        if i == len(lst) - 1:
+            if tol_eq(lst[i], streak_num):
+                streak_count += 1
+            counts.append((streak_num, streak_count))
+        elif tol_eq(lst[i], streak_num):
             streak_count += 1
         else:
             counts.append((streak_num, streak_count))
             streak_num = lst[i]
             streak_count = 1
-        counts.append((streak_num, streak_count))
-        counts = list(set((counts)))
     return multi_max(counts), max(counts, key=itemgetter(1))[1]
 
 
