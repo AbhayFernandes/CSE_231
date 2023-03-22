@@ -1,0 +1,14 @@
+Country         City
+Bulgaria     Sofia
+China        Beijing
+Japan        Tokyo
+Tunisia      Sousse
+Poland       Warsaw
+Germany      Berlin
+Poland       Poznan
+Bulgaria     Plovdiv
+Nigeria      Abuja
+China        Shanghai
+Tunisia      Tunis
+France       Paris
+Japan        Tokyo
