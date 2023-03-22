@@ -3,6 +3,7 @@ import copy
 from typing import List, Dict, Tuple, TextIO, Union
 from datetime import datetime
 from operator import itemgetter
+import sys
 
 COLUMNS = ["date",  "average temp", "high temp", "low temp", "precipitation", \
             "snow", "snow depth"]
@@ -97,7 +98,7 @@ def get_min(col: int, data: List[List[Tuple[str, float, float, float, float, flo
     output = []
     for city in cities:
         output.append((city, min_values[cities.index(city)]))
-    return output   # remove this line
+    return output
 
 
 def get_max(col: int, data: List[List[Tuple[str, float, float, float, float, float, float]]], cities: List[str]) -> Tuple[str, float]: 
@@ -112,7 +113,7 @@ def get_max(col: int, data: List[List[Tuple[str, float, float, float, float, flo
     output = []
     for city in cities:
         output.append((city, max_values[cities.index(city)]))
-    return output   # remove this line
+    return output
 
 
 def average(lst): 
@@ -221,14 +222,59 @@ def display_statistics(col, data, cities):
         print(f"{cities[i]}:")
         print(f"Min: {mins[i][1]:.2f} Max: {maxs[i][1]:.2f} Avg: {averages[i][1]:.2f}")
         print(f"Most common repeated values ({modes[0][2]} occurrences): {modes_str}")
-    pass   # remove this line
 
+
+'''
+        1. Highest value for a specific column for all cities
+        2. Lowest value for a specific column for all cities
+        3. Average value for a specific column for all cities
+        4. Modes for a specific column for all cities
+        5. Summary Statistics for a specific column for a specific city
+        6. High and low averages for each category across all data
+        7. Quit
+'''
 
 def main():
-    cities, fps = open_files()
-    master_list = read_files(fps)
-    display_statistics(3, master_list, cities)
-    pass
+    #for testing:
+    sys.stdin = open("input.txt", "rt")
+    sys.stdout = open("output.txt", "wt")
+    print(BANNER)
+    cities, cities_fp = open_files()
+    data = read_files(cities_fp)
+    while True:
+        choice = int(input(MENU))
+        if choice == 1:
+            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
+            end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
+            category = input("\nEnter desired category: ").lower()
+            data = get_data_in_range(data, start_date, end_date)
+            col = COLUMNS.index(category)
+            print(col)
+            maxs = get_max(col, data, cities)
+            print(f"\n\t{category}: ")
+            for i in maxs:
+                print(f"\tMax for {i[0]:s}: {i[1]:.2f}")
+        elif choice == 2:
+            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
+            end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
+            category = input("\nEnter desired category: ").lower()
+            data = get_data_in_range(data, start_date, end_date)
+            col = COLUMNS.index(category)
+            mins = get_min(col, data, cities)
+            print(f"\n\t{category}: ")
+            for i in mins:
+                print(f"\tMin for {i[0]:s}: {i[1]:.2f}")
+        elif choice == 3:
+            pass
+        elif choice == 4:
+            pass
+        elif choice == 5:
+            pass
+        elif choice == 6:
+            pass
+        elif choice == 7:
+            print("\nThank you using this program!")
+            break
 
 if __name__ == "__main__":
     main()

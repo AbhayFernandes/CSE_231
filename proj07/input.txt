@@ -1,0 +1,10 @@
+anchorage,lansing
+2
+01/01/2010
+01/01/2019
+average Temp
+2
+01/01/2010
+01/01/2019
+snow
+7
