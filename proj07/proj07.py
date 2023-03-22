@@ -71,6 +71,7 @@ def read_files(cities_fp: List[TextIO]) -> List[List[Tuple[str, float, float, fl
         output.append(data)
     return output
 
+
 def get_data_in_range(master_list: List[List[Tuple[str, float, float, float, float, float, float]]], start_str: str, end_str: str) -> List[List[Tuple[str, float, float, float, float, float, float]]]:
     ''' Docstring'''
     start_date = datetime.strptime(start_str, "%m/%d/%Y").date()
@@ -113,8 +114,48 @@ def get_max(col, data, cities):
         output.append((city, max_values[cities.index(city)]))
     return output   # remove this line
 
+
 def average(lst): 
     return sum(lst) / len(lst)
+
+
+def tol_eq(a, b):
+    return abs((a - b) / a) < TOL
+
+
+def remove_duplicates(lst):
+    output = []
+    for i in lst:
+        if i not in output:
+            output.append(i)
+    return output
+
+
+def multi_max(lst):
+    output = []
+    max(lst, key=itemgetter(1))[1]
+    for i in lst:
+        if i[1] == max(lst, key=itemgetter(1))[1]:
+            output.append(i[0])
+    return output
+
+
+def mode(lst):
+    lst = sorted(lst)
+    counts = []
+    streak_num = lst[0]
+    streak_count = 1
+    for i in range(1, len(lst)):
+        if tol_eq(lst[i], streak_num):
+            streak_count += 1
+        else:
+            counts.append((streak_num, streak_count))
+            streak_num = lst[i]
+            streak_count = 1
+        counts.append((streak_num, streak_count))
+        counts = remove_duplicates(counts)
+    return multi_max(counts), max(counts, key=itemgetter(1))[1]
+
 
 def get_average(col, data, cities): 
     ''' Docstring'''
@@ -133,7 +174,20 @@ def get_average(col, data, cities):
 
 def get_modes(col, data, cities):
     ''' Docstring'''
-    pass   # remove this line
+    mode_values = []
+    for city in data:
+        city_row = []
+        for row in city:
+            if row[col] != None:
+                city_row.append(row[col])
+        mode_values.append(mode(city_row))
+    output = []
+    for city in cities:
+        if mode_values[cities.index(city)][1] == 1:
+            output.append((city, [], mode_values[cities.index(city)][1]))
+        else:
+            output.append((city, mode_values[cities.index(city)][0], mode_values[cities.index(city)][1]))
+    return output   # remove this line
 
 
 def high_low_averages(data, cities, categories):
@@ -147,6 +201,22 @@ def display_statistics(col,data, cities):
 
 
 def main():
+    ''' Docstring'''
+    data = [[('1/1/1948', None, 26.0, 22.5, 0.84, 3.1, 3.0), ('1/2/1948', None, 27.0,
+            22.0, 0.09, 0.9, 5.0), ('11/18/2022', 28.0, 31.0, 28.0, 0.12, 2.6, 5.0),
+            ('12/25/2022', 17.0, 18.0, 13.0, 0.01, 0.4, 9.0)], [('1/1/1948', None, 26.0,
+            22.0, 0.84, 3.1, 3.0), ('1/2/1948', None, 27.0, 23.2, 0.09, 0.9, 5.0),
+            ('12/25/2022', 17.0, 18.0, 13.0, 0.01, 0.4, 9.0), ('12/25/2020', 17.0, 18.0,
+            22.4, 0.01, 0.4, 9.0),('11/18/2022', 28.0, 26.4, 13.17, 0.12, 2.6, 5.0)],
+            [('11/17/2000', 31.0, 34.0, 28.0, 0.0, 0.1, None), ('11/18/2000', 29.0, 35.0, -
+            26.0, 0.0, None, None), ('11/19/2000', 33.0, 43.0, 20.0, 0.02, None, None),
+            ('11/20/2000', 25.0, 29.0, -26.0, 0.0, 0.3, 0.0), ('12/25/2020', 17.0, 18.0,
+            22.4, 0.01, 0.4, 9.0),('11/18/2022', 28.0, 22.0, -26.47, 0.12, 2.6,
+            5.0),('12/25/2022', 17.0, 18.0, -26.32, 0.01, 0.4, 9.0),('11/25/2022', 17.0,
+            18.0, -25.97, 0.01, 0.4, 9.0)]]
+    cities = ['FL', 'CA', 'MI']
+    col = 3
+    print(get_modes(col, data, cities))
     pass
 
 if __name__ == "__main__":
