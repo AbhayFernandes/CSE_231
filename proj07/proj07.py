@@ -4,13 +4,20 @@ from typing import List, Tuple, TextIO, Union
 from datetime import datetime
 from operator import itemgetter
 
-COLUMNS = ["date",  "average temp", "high temp", "low temp", "precipitation", \
-            "snow", "snow depth"]
+COLUMNS = [
+    "date",
+    "average temp",
+    "high temp",
+    "low temp",
+    "precipitation",
+    "snow",
+    "snow depth",
+]
 TOL = 0.02
-BANNER = 'This program will take in csv files with weather data and compare \
+BANNER = "This program will take in csv files with weather data and compare \
 the sets.\nThe data is available for high, low, and average temperatures,\
-\nprecipitation, and snow and snow depth.'    
-MENU = '''
+\nprecipitation, and snow and snow depth."
+MENU = """
         Menu Options:
         1. Highest value for a specific column for all cities
         2. Lowest value for a specific column for all cities
@@ -19,11 +26,11 @@ MENU = '''
         5. Summary Statistics for a specific column for a specific city
         6. High and low averages for each category across all data
         7. Quit
-        Menu Choice: '''
+        Menu Choice: """
 
 
 def open_files() -> Union[List[str], List[TextIO]]:
-    ''' Docstring'''
+    """Docstring"""
     while True:
         cities = []
         cities_fp = []
@@ -43,15 +50,17 @@ def open_files() -> Union[List[str], List[TextIO]]:
 
 
 def null_float(value: str) -> float:
-    ''' Docstring'''
+    """Docstring"""
     if value == "":
         return None
     else:
         return float(value)
 
 
-def read_files(cities_fp: List[TextIO]) -> List[List[Tuple[str, float, float, float, float, float, float]]]:
-    ''' Docstring'''
+def read_files(
+    cities_fp: List[TextIO],
+) -> List[List[Tuple[str, float, float, float, float, float, float]]]:
+    """Docstring"""
     output = []
     for fp in cities_fp:
         data = []
@@ -66,13 +75,29 @@ def read_files(cities_fp: List[TextIO]) -> List[List[Tuple[str, float, float, fl
             precipitation = null_float(row[4])
             snow = null_float(row[5])
             snow_depth = null_float(row[6])
-            data.append((date, average_temp, high_temp, low_temp, precipitation, snow, snow_depth))
+            data.append(
+                (
+                    date,
+                    average_temp,
+                    high_temp,
+                    low_temp,
+                    precipitation,
+                    snow,
+                    snow_depth,
+                )
+            )
         output.append(data)
     return output
 
 
-def get_data_in_range(master_list: List[List[Tuple[str, float, float, float, float, float, float]]], start_str: str, end_str: str) -> List[List[Tuple[str, float, float, float, float, float, float]]]:
-    ''' Docstring'''
+def get_data_in_range(
+    master_list: List[
+        List[Tuple[str, float, float, float, float, float, float]]
+    ],
+    start_str: str,
+    end_str: str,
+) -> List[List[Tuple[str, float, float, float, float, float, float]]]:
+    """Docstring"""
     start_date = datetime.strptime(start_str, "%m/%d/%Y").date()
     end_date = datetime.strptime(end_str, "%m/%d/%Y").date()
     output = []
@@ -85,8 +110,12 @@ def get_data_in_range(master_list: List[List[Tuple[str, float, float, float, flo
     return output
 
 
-def get_min(col: int, data: List[List[Tuple[str, float, float, float, float, float, float]]], cities: List[str]) -> Tuple[str, float]:
-    ''' Docstring'''
+def get_min(
+    col: int,
+    data: List[List[Tuple[str, float, float, float, float, float, float]]],
+    cities: List[str],
+) -> Tuple[str, float]:
+    """Docstring"""
     min_values = []
     for city in data:
         city_row = []
@@ -100,8 +129,12 @@ def get_min(col: int, data: List[List[Tuple[str, float, float, float, float, flo
     return output
 
 
-def get_max(col: int, data: List[List[Tuple[str, float, float, float, float, float, float]]], cities: List[str]) -> Tuple[str, float]: 
-    ''' Docstring'''
+def get_max(
+    col: int,
+    data: List[List[Tuple[str, float, float, float, float, float, float]]],
+    cities: List[str],
+) -> Tuple[str, float]:
+    """Docstring"""
     max_values = []
     for city in data:
         city_row = []
@@ -162,8 +195,12 @@ def mode(lst):
     return multi_max(counts), max(counts, key=itemgetter(1))[1]
 
 
-def get_average(col: int, data: List[List[Tuple[str, float, float, float, float, float, float]]], cities: List[str]) -> Tuple[str, float]:
-    ''' Docstring'''
+def get_average(
+    col: int,
+    data: List[List[Tuple[str, float, float, float, float, float, float]]],
+    cities: List[str],
+) -> Tuple[str, float]:
+    """Docstring"""
     average_values = []
     for city in data:
         tot = 0
@@ -174,15 +211,19 @@ def get_average(col: int, data: List[List[Tuple[str, float, float, float, float,
             else:
                 tot += float(row[col])
                 count += 1
-        average_values.append( round(tot / count, 2) )
+        average_values.append(round(tot / count, 2))
     output = []
     for city in cities:
         output.append((city, average_values[cities.index(city)]))
     return output
 
 
-def get_modes(col: int, data: List[List[Tuple[str, float, float, float, float, float, float]]], cities: List[str]) -> Tuple[str, float]:
-    ''' Docstring'''
+def get_modes(
+    col: int,
+    data: List[List[Tuple[str, float, float, float, float, float, float]]],
+    cities: List[str],
+) -> Tuple[str, float]:
+    """Docstring"""
     mode_values = []
     for city in data:
         city_row = []
@@ -195,12 +236,18 @@ def get_modes(col: int, data: List[List[Tuple[str, float, float, float, float, f
         if mode_values[cities.index(city)][1] == 1:
             output.append((city, [], mode_values[cities.index(city)][1]))
         else:
-            output.append((city, mode_values[cities.index(city)][0], mode_values[cities.index(city)][1]))
+            output.append(
+                (
+                    city,
+                    mode_values[cities.index(city)][0],
+                    mode_values[cities.index(city)][1],
+                )
+            )
     return output
 
 
 def high_low_averages(data, cities, categories):
-    ''' Docstring'''
+    """Docstring"""
     output = []
     for category in categories:
         try:
@@ -212,14 +259,19 @@ def high_low_averages(data, cities, categories):
             for i in range(len(averages)):
                 if averages[i][1] == averages[-1][1]:
                     max_values.append(averages[i])
-            output.append([(averages[0][0], round(averages[0][1], 2)), (max_values[0][0], round(max_values[0][1], 2))])
+            output.append(
+                [
+                    (averages[0][0], round(averages[0][1], 2)),
+                    (max_values[0][0], round(max_values[0][1], 2)),
+                ]
+            )
         except ValueError:
             output.append(None)
-    return output 
+    return output
 
 
 def display_statistics(col, data, cities):
-    ''' Docstring'''
+    """Docstring"""
     averages = get_average(col, data, cities)
     modes = get_modes(col, data, cities)
     mins = get_min(col, data, cities)
@@ -227,11 +279,17 @@ def display_statistics(col, data, cities):
     print(f"\n\t{COLUMNS[col]}: ")
     for i in range(len(cities)):
         print(f"\t{cities[i]}: ")
-        print(f"\tMin: {mins[i][1]:.2f} Max: {maxs[i][1]:.2f} Avg: {averages[i][1]:.2f}")
+        print(
+            f"\tMin: {mins[i][1]:.2f} Max: {maxs[i][1]:.2f}",
+            f"Avg: {averages[i][1]:.2f}"
+        )
         if modes[i][2] == 1:
             print(f"\tNo modes.")
         else:
-            print(f"\tMost common repeated values ({modes[i][2]} occurrences): {str(*modes[i][1])}\n")
+            print(
+                f"\tMost common repeated values ({modes[i][2]} occurrences):",
+                f"{str(*modes[i][1])}\n"
+            )
 
 
 def get_user_input(in_data):
@@ -278,14 +336,23 @@ def main():
             modes = get_modes(col, master, cities)
             print(f"\n\t{category}: ")
             for i in modes:
-                print(f"\tMost common repeated values for {i[0]:s} ({i[2]} occurrences): {str(*i[1])}\n")
+                print(
+                    f"\tMost common repeated values for {i[0]:s} ({i[2]}",
+                    f"occurrences): {str(*i[1])}\n"
+                )
         elif choice == 5:
             DATA, category, col = get_user_input(data)
             display_statistics(col, DATA, cities)
         elif choice == 6:
-            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
+            start_date = input(
+                "\nEnter a starting date (in mm/dd/yyyy format): "
+            )
             end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
-            categories = input("\nEnter desired categories seperated by comma: ").lower().split(",")
+            categories = (
+                input("\nEnter desired categories seperated by comma: ")
+                .lower()
+                .split(",")
+            )
             DATA = get_data_in_range(data, start_date, end_date)
             category_avgs = high_low_averages(DATA, cities, categories)
             print("\nHigh and low averages for each category across all data.")
@@ -293,13 +360,18 @@ def main():
             for category in category_avgs:
                 if category != None:
                     print(f"\n\t{categories[count]}: ")
-                    print(f"\tLowest Average: {category[0][0]} = {category[0][1]:.2f} Highest Average: {category[1][0]} = {category[1][1]:.2f}")
+                    print(
+                        f"\tLowest Average: {category[0][0]} =",
+                        f"{category[0][1]:.2f} Highest Average:",
+                        f"{category[1][0]} = {category[1][1]:.2f}"
+                    )
                 else:
                     print(f"\n\t{categories[count]} category is not found.")
                 count += 1
         elif choice == 7:
             print("\nThank you using this program!")
             break
+
 
 if __name__ == "__main__":
     main()
