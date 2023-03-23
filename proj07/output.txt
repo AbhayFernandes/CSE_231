@@ -15,8 +15,8 @@ Enter a starting date (in mm/dd/yyyy format):
 Enter an ending date (in mm/dd/yyyy format): 
 Enter desired category: 
 	average temp: 
-	Min for anchorage: -19.00
-	Min for lansing: -9.00
+	Min for anchorage: -8.00
+	Min for lansing: -7.00
 
         Menu Options:
         1. Highest value for a specific column for all cities

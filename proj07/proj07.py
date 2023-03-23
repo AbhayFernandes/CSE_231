@@ -77,13 +77,14 @@ def get_data_in_range(master_list: List[List[Tuple[str, float, float, float, flo
     ''' Docstring'''
     start_date = datetime.strptime(start_str, "%m/%d/%Y").date()
     end_date = datetime.strptime(end_str, "%m/%d/%Y").date()
-    new_master_list = copy.deepcopy(master_list)
-    for city in new_master_list:
-        for row in city:
+    output = []
+    for i in range(len(master_list)):
+        output.append([])
+        for row in master_list[i]:
             date = datetime.strptime(row[0], "%m/%d/%Y").date()
-            if date < start_date or date > end_date:
-                city.remove(row)
-    return new_master_list
+            if date >= start_date and date <= end_date:
+                output[i].append(row)
+    return output
 
 
 def get_min(col: int, data: List[List[Tuple[str, float, float, float, float, float, float]]], cities: List[str]) -> Tuple[str, float]:
@@ -116,12 +117,15 @@ def get_max(col: int, data: List[List[Tuple[str, float, float, float, float, flo
     return output
 
 
-def average(lst): 
+def average(lst):
     return sum(lst) / len(lst)
 
 
 def tol_eq(a, b):
-    return abs((a - b) / a) < TOL
+    if a != 0:
+        return abs((a - b) / a) < TOL
+    else:
+        return False
 
 
 def remove_duplicates(lst):
@@ -214,14 +218,11 @@ def display_statistics(col, data, cities):
     modes = get_modes(col, data, cities)
     mins = get_min(col, data, cities)
     maxs = get_max(col, data, cities)
-    modes_str = ""
-    for i in modes:
-        modes_str = modes_str.join(f"{i[1][0]},")
-    modes_str = modes_str[:-1]
+    print(f"\n\t{COLUMNS[col]}: ")
     for i in range(len(cities)):
-        print(f"{cities[i]}:")
-        print(f"Min: {mins[i][1]:.2f} Max: {maxs[i][1]:.2f} Avg: {averages[i][1]:.2f}")
-        print(f"Most common repeated values ({modes[0][2]} occurrences): {modes_str}")
+        print(f"\t{cities[i]}: ")
+        print(f"\tMin: {mins[i][1]:.2f} Max: {maxs[i][1]:.2f} Avg: {averages[i][1]:.2f}")
+        print(f"\tMost common repeated values ({modes[i][2]} occurrences): {str(*modes[i][1])}\n")
 
 
 '''
@@ -235,9 +236,9 @@ def display_statistics(col, data, cities):
 '''
 
 def main():
-    #for testing:
-    sys.stdin = open("input.txt", "rt")
-    sys.stdout = open("output.txt", "wt")
+    # for testing:
+    # sys.stdin = open("input.txt", "rt")
+    # sys.stdout = open("output.txt", "wt")
     print(BANNER)
     cities, cities_fp = open_files()
     data = read_files(cities_fp)
@@ -249,7 +250,6 @@ def main():
             category = input("\nEnter desired category: ").lower()
             data = get_data_in_range(data, start_date, end_date)
             col = COLUMNS.index(category)
-            print(col)
             maxs = get_max(col, data, cities)
             print(f"\n\t{category}: ")
             for i in maxs:
@@ -265,13 +265,38 @@ def main():
             for i in mins:
                 print(f"\tMin for {i[0]:s}: {i[1]:.2f}")
         elif choice == 3:
-            pass
+            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
+            end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
+            category = input("\nEnter desired category: ").lower()
+            data = get_data_in_range(data, start_date, end_date)
+            col = COLUMNS.index(category)
+            avgs = get_average(col, data, cities)
+            print(f"\n\t{category}: ")
+            for i in avgs:
+                print(f"\tAverage for {i[0]:s}: {i[1]:.2f}")
         elif choice == 4:
-            pass
+            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
+            end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
+            category = input("\nEnter desired category: ").lower()
+            data = get_data_in_range(data, start_date, end_date)
+            col = COLUMNS.index(category)
+            modes = get_modes(col, data, cities)
+            print(f"\n\t{category}: ")
+            for i in modes:
+                print(f"\tMost common repeated values for {i[0]:s} ({i[2]} occurrences): {str(*i[1])}\n")
         elif choice == 5:
-            pass
+            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
+            end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
+            category = input("\nEnter desired category: ").lower()
+            data = get_data_in_range(data, start_date, end_date)
+            col = COLUMNS.index(category)
+            display_statistics(col, data, cities)
         elif choice == 6:
-            pass
+            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
+            end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
+            categories = input("\nEnter desired category: ").lower().split(",")
+            data = get_data_in_range(data, start_date, end_date)
+            high_low_averages(data, cities, categories)
         elif choice == 7:
             print("\nThank you using this program!")
             break
