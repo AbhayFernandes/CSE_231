@@ -1,3 +1,22 @@
+###########################################################
+#  Computer Project #7
+#
+#  Algorithm
+#    1.  Print a welcome message
+#    2.  Prompt the user for a file name
+#    3.  Show the menu, ask for a choice
+#    4.  Based on their choice, do the following:
+#        1.  Highest value for a specific column for all cities
+#        2.  Lowest value for a specific column for all cities
+#        3.  Average value for a specific column for all cities
+#        4.  Modes for a specific column for all cities
+#        5.  Summary Statistics for a specific column for a specific city
+#        6.  High and low averages for each category across all data
+#        7.  Quit
+#    5.  Repeat steps 3 and 4 until the user chooses to quit
+#    6.  Print a goodbye message
+###########################################################
+
 import csv
 from typing import List, Tuple, TextIO, Union
 from datetime import datetime
@@ -29,7 +48,10 @@ MENU = """
 
 
 def open_files() -> Union[List[str], List[TextIO]]:
-    """Docstring"""
+    """
+    This function will open the files that the user inputs and return a list of
+    the file names and a list of the file pointers.
+    """
     while True:
         cities = []
         cities_fp = []
@@ -49,7 +71,10 @@ def open_files() -> Union[List[str], List[TextIO]]:
 
 
 def null_float(value: str) -> float:
-    """Docstring"""
+    """
+    This function will return None if the value is an empty string, otherwise
+    it will return the float value of the string.
+    """
     if value == "":
         return None
     else:
@@ -59,7 +84,10 @@ def null_float(value: str) -> float:
 def read_files(
     cities_fp: List[TextIO],
 ) -> List[List[Tuple[str, float, float, float, float, float, float]]]:
-    """Docstring"""
+    """
+    This function will read the file pointers 
+    and return a list of lists of tuples, containing the data within the files.
+    """
     output = []
     for fp in cities_fp:
         data = []
@@ -96,7 +124,10 @@ def get_data_in_range(
     start_str: str,
     end_str: str,
 ) -> List[List[Tuple[str, float, float, float, float, float, float]]]:
-    """Docstring"""
+    """
+    This function will return a list of lists of tuples, containing the data
+    within the files, but only for the dates between the start and end dates.
+    """
     start_date = datetime.strptime(start_str, "%m/%d/%Y").date()
     end_date = datetime.strptime(end_str, "%m/%d/%Y").date()
     output = []
@@ -114,7 +145,10 @@ def get_min(
     data: List[List[Tuple[str, float, float, float, float, float, float]]],
     cities: List[str],
 ) -> Tuple[str, float]:
-    """Docstring"""
+    """
+    This function will return a tuple containing the city with the lowest value
+    for the specified column and the value.
+    """
     min_values = []
     for city in data:
         city_row = []
@@ -133,7 +167,10 @@ def get_max(
     data: List[List[Tuple[str, float, float, float, float, float, float]]],
     cities: List[str],
 ) -> Tuple[str, float]:
-    """Docstring"""
+    """
+    This function will return a tuple containing the city with the highest value
+    for the specified column and the value.
+    """
     max_values = []
     for city in data:
         city_row = []
@@ -148,10 +185,18 @@ def get_max(
 
 
 def average(lst):
+    """
+    This function will return the average of a list of numbers.
+    """
     return sum(lst) / len(lst)
 
 
 def tol_eq(a, b):
+    """
+    This function will return True if the absolute value of the difference
+    between a and b divided by a is less than TOL, otherwise it will return
+    False.
+    """
     if a != 0:
         return abs((a - b) / a) < TOL
     else:
@@ -159,6 +204,9 @@ def tol_eq(a, b):
 
 
 def remove_duplicates(lst):
+    """
+    This function will return a list with all duplicates removed.
+    """
     output = []
     for i in lst:
         if i not in output:
@@ -167,6 +215,10 @@ def remove_duplicates(lst):
 
 
 def multi_max(lst):
+    """
+    This function will return a list of all the values in lst that are equal
+    to the maximum value in lst.
+    """
     output = []
     max_value = max(lst, key=itemgetter(1))[1]
     for i in lst:
@@ -176,6 +228,10 @@ def multi_max(lst):
 
 
 def mode(lst):
+    """
+    This function will return a list of the mode(s) of lst and the number of
+    times the mode(s) occur.
+    """
     lst = sorted(lst)
     counts = []
     streak_num = lst[0]
@@ -199,7 +255,10 @@ def get_average(
     data: List[List[Tuple[str, float, float, float, float, float, float]]],
     cities: List[str],
 ) -> Tuple[str, float]:
-    """Docstring"""
+    """
+    This function will return a tuple containing the city with the highest value
+    for the specified column and the value.
+    """
     average_values = []
     for city in data:
         tot = 0
@@ -222,7 +281,10 @@ def get_modes(
     data: List[List[Tuple[str, float, float, float, float, float, float]]],
     cities: List[str],
 ) -> Tuple[str, float]:
-    """Docstring"""
+    """
+    This function will return a tuple containing the city with the highest value
+    for the specified column and the value.
+    """
     mode_values = []
     for city in data:
         city_row = []
@@ -246,7 +308,11 @@ def get_modes(
 
 
 def high_low_averages(data, cities, categories):
-    """Docstring"""
+    """
+    This function will return a list of tuples containing the city with the
+    lowest value for the specified column and the value, and the city with the
+    highest value for the specified column and the value.
+    """
     output = []
     for category in categories:
         try:
@@ -254,10 +320,7 @@ def high_low_averages(data, cities, categories):
             averages = get_average(col, data, cities)
             averages = sorted(averages, key=itemgetter(1))
             # grab all max values:
-            max_values = []
-            for i in range(len(averages)):
-                if averages[i][1] == averages[-1][1]:
-                    max_values.append(averages[i])
+            max_values = multi_max(averages)
             output.append(
                 [
                     (averages[0][0], round(averages[0][1], 2)),
@@ -270,7 +333,9 @@ def high_low_averages(data, cities, categories):
 
 
 def display_statistics(col, data, cities):
-    """Docstring"""
+    """
+    This function will print the statistics for the specified column.
+    """
     averages = get_average(col, data, cities)
     modes = get_modes(col, data, cities)
     mins = get_min(col, data, cities)
@@ -292,6 +357,10 @@ def display_statistics(col, data, cities):
 
 
 def get_user_input(in_data):
+    """
+    This function will get the user input for the desired category and date
+    range.
+    """
     start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
     end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
     while True:
@@ -306,6 +375,10 @@ def get_user_input(in_data):
 
 
 def main():
+    """
+    This is the main function, handling the menu and calling the other
+    functions.
+    """
     print(BANNER)
     cities, cities_fp = open_files()
     data = read_files(cities_fp)
