@@ -1,9 +1,8 @@
 import csv
-import copy
-from typing import List, Dict, Tuple, TextIO, Union
+import sys
+from typing import List, Tuple, TextIO, Union
 from datetime import datetime
 from operator import itemgetter
-import sys
 
 COLUMNS = ["date",  "average temp", "high temp", "low temp", "precipitation", \
             "snow", "snow depth"]
@@ -38,10 +37,9 @@ def open_files() -> Union[List[str], List[TextIO]]:
                 cities.append(city)
                 cities_fp.append(city_fp)
             except FileNotFoundError:
-                print(f"Error: File {city}.csv is not found")
-                break
-        if len(cities) == len(str_list):
-            return cities, cities_fp
+                print(f"\nError: File {city}.csv is not found")
+                continue
+        return cities, cities_fp
 
 
 def null_float(value: str) -> float:
@@ -164,18 +162,22 @@ def mode(lst):
     return multi_max(counts), max(counts, key=itemgetter(1))[1]
 
 
-def get_average(col: int, data: List[List[Tuple[str, float, float, float, float, float, float]]], cities: List[str]) -> Tuple[str, float]: 
+def get_average(col: int, data: List[List[Tuple[str, float, float, float, float, float, float]]], cities: List[str]) -> Tuple[str, float]:
     ''' Docstring'''
-    avg_values = []
+    average_values = []
     for city in data:
-        city_row = []
+        tot = 0
+        count = 0
         for row in city:
-            if row[col] != None:
-                city_row.append(row[col])
-        avg_values.append(average(city_row))
+            if row[col] == None:
+                continue
+            else:
+                tot += float(row[col])
+                count += 1
+        average_values.append( round(tot / count, 2) )
     output = []
     for city in cities:
-        output.append((city, round(avg_values[cities.index(city)], 2)))
+        output.append((city, average_values[cities.index(city)]))
     return output
 
 
@@ -204,9 +206,13 @@ def high_low_averages(data, cities, categories):
         try:
             col = COLUMNS.index(category)
             averages = get_average(col, data, cities)
-            averages = sorted(averages, key=itemgetter(0))
             averages = sorted(averages, key=itemgetter(1))
-            output.append([(averages[0][0], averages[0][1]), (averages[-1][0], averages[-1][1])])
+            # grab all max values:
+            max_values = []
+            for i in range(len(averages)):
+                if averages[i][1] == averages[-1][1]:
+                    max_values.append(averages[i])
+            output.append([(averages[0][0], round(averages[0][1], 2)), (max_values[0][0], round(max_values[0][1], 2))])
         except ValueError:
             output.append(None)
     return output 
@@ -222,81 +228,75 @@ def display_statistics(col, data, cities):
     for i in range(len(cities)):
         print(f"\t{cities[i]}: ")
         print(f"\tMin: {mins[i][1]:.2f} Max: {maxs[i][1]:.2f} Avg: {averages[i][1]:.2f}")
-        print(f"\tMost common repeated values ({modes[i][2]} occurrences): {str(*modes[i][1])}\n")
+        if modes[i][2] == 1:
+            print(f"\tNo modes.")
+        else:
+            print(f"\tMost common repeated values ({modes[i][2]} occurrences): {str(*modes[i][1])}\n")
 
 
-'''
-        1. Highest value for a specific column for all cities
-        2. Lowest value for a specific column for all cities
-        3. Average value for a specific column for all cities
-        4. Modes for a specific column for all cities
-        5. Summary Statistics for a specific column for a specific city
-        6. High and low averages for each category across all data
-        7. Quit
-'''
+def get_user_input(in_data):
+    start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
+    end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
+    while True:
+        category = input("\nEnter desired category: ").lower()
+        if category in COLUMNS:
+            col = COLUMNS.index(category)
+            data = get_data_in_range(in_data, start_date, end_date)
+            return data, category, col
+        else:
+            print(f"\n\t{category} category is not found.")
+            continue
+
 
 def main():
-    # for testing:
-    # sys.stdin = open("input.txt", "rt")
-    # sys.stdout = open("output.txt", "wt")
+    sys.stdin = open("input.txt", "r")
     print(BANNER)
     cities, cities_fp = open_files()
     data = read_files(cities_fp)
     while True:
         choice = int(input(MENU))
         if choice == 1:
-            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
-            end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
-            category = input("\nEnter desired category: ").lower()
-            data = get_data_in_range(data, start_date, end_date)
-            col = COLUMNS.index(category)
-            maxs = get_max(col, data, cities)
+            master, category, col = get_user_input(data)
+            maxs = get_max(col, master, cities)
             print(f"\n\t{category}: ")
             for i in maxs:
                 print(f"\tMax for {i[0]:s}: {i[1]:.2f}")
         elif choice == 2:
-            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
-            end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
-            category = input("\nEnter desired category: ").lower()
-            data = get_data_in_range(data, start_date, end_date)
-            col = COLUMNS.index(category)
-            mins = get_min(col, data, cities)
+            master, category, col = get_user_input(data)
+            mins = get_min(col, master, cities)
             print(f"\n\t{category}: ")
             for i in mins:
                 print(f"\tMin for {i[0]:s}: {i[1]:.2f}")
         elif choice == 3:
-            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
-            end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
-            category = input("\nEnter desired category: ").lower()
-            data = get_data_in_range(data, start_date, end_date)
-            col = COLUMNS.index(category)
-            avgs = get_average(col, data, cities)
+            master, category, col = get_user_input(data)
+            avgs = get_average(col, master, cities)
             print(f"\n\t{category}: ")
             for i in avgs:
                 print(f"\tAverage for {i[0]:s}: {i[1]:.2f}")
         elif choice == 4:
-            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
-            end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
-            category = input("\nEnter desired category: ").lower()
-            data = get_data_in_range(data, start_date, end_date)
-            col = COLUMNS.index(category)
-            modes = get_modes(col, data, cities)
+            master, category, col = get_user_input(data)
+            modes = get_modes(col, master, cities)
             print(f"\n\t{category}: ")
             for i in modes:
                 print(f"\tMost common repeated values for {i[0]:s} ({i[2]} occurrences): {str(*i[1])}\n")
         elif choice == 5:
-            start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
-            end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
-            category = input("\nEnter desired category: ").lower()
-            data = get_data_in_range(data, start_date, end_date)
-            col = COLUMNS.index(category)
-            display_statistics(col, data, cities)
+            DATA, category, col = get_user_input(data)
+            display_statistics(col, DATA, cities)
         elif choice == 6:
             start_date = input("\nEnter a starting date (in mm/dd/yyyy format): ")
             end_date = input("\nEnter an ending date (in mm/dd/yyyy format): ")
-            categories = input("\nEnter desired category: ").lower().split(",")
-            data = get_data_in_range(data, start_date, end_date)
-            high_low_averages(data, cities, categories)
+            categories = input("\nEnter desired categories seperated by comma: ").lower().split(",")
+            DATA = get_data_in_range(data, start_date, end_date)
+            category_avgs = high_low_averages(DATA, cities, categories)
+            print("\nHigh and low averages for each category across all data.")
+            count = 0
+            for category in category_avgs:
+                if category != None:
+                    print(f"\n\t{categories[count]}: ")
+                    print(f"\tLowest Average: {category[0][0]} = {category[0][1]:.2f} Highest Average: {category[1][0]} = {category[1][1]:.2f}")
+                else:
+                    print(f"\n\t{categories[count]} category is not found.")
+                count += 1
         elif choice == 7:
             print("\nThank you using this program!")
             break
