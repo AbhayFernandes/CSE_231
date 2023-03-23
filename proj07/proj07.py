@@ -1,5 +1,4 @@
 import csv
-import sys
 from typing import List, Tuple, TextIO, Union
 from datetime import datetime
 from operator import itemgetter
@@ -307,7 +306,6 @@ def get_user_input(in_data):
 
 
 def main():
-    sys.stdin = open("input.txt", "r")
     print(BANNER)
     cities, cities_fp = open_files()
     data = read_files(cities_fp)
