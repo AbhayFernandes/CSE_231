@@ -1,0 +1,211 @@
+
+Enter games file: games.csv
+
+No Such file
+
+Enter games file: games1.csv
+
+No Such file
+
+Enter games file: games_clean.csv
+
+Enter discount file: discount_clean.csv
+
+No Such file
+
+Enter discount file: discount.csv
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 9
+
+Invalid option
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 1
+
+Which year: ab
+
+Please enter a valid year
+
+Which year: 2abc
+
+Please enter a valid year
+
+Which year: 1900
+
+Nothing to print
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 1
+
+Which year: 2006
+
+Games released in 2006:
+688(I) Hunter/Killer, Advent Rising, Call of Duty: United Offensive, Call of Duty�, Call of Duty� 2, Company of Heroes, DEFCON, Dangerous Waters, Dark Messiah of Might & Magic, Disciples II: Gallean's Return, Disciples II: Rise of the Elves , Earth 2160, FlatOut 2�, Fleet Command, GUN�, Garry's Mod, Geneforge 4: Rebellion, Ghost Master�, Gumboy - Crazy Adventures�, Half-Life 2: Episode One, Half-Life Deathmatch: Source, Heavy Weapon Deluxe, Heroes of Annihilated Empires, Iron Warriors: T - 72 Tank Command , Poker Superstars II, Psychonauts, Red Orchestra: Ostfront 41-45, RoboBlitz, Shadowgrounds, SiN Episodes: Emergence, Sid Meier's Civilization� III Complete, Sid Meier's Civilization� IV, Space Empires IV Deluxe, Space Empires V, Sub Command, Total War: MEDIEVAL II � Definitive Edition, Uplink, Vegas: Make It Big�, X2: The Threat, X3: Reunion, Xpand Rally, Zuma Deluxe
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 2
+
+Which developer: MSU
+
+Nothing to print
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 2
+
+Which developer: Egosoft
+
+Games made by Egosoft:
+X4: Foundations, X Rebirth VR Edition, X Rebirth, X: Beyond the Frontier, X: Tension, X3: Terran Conflict, X3: Reunion, X2: The Threat
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 3
+
+Which genre: Movie
+
+Nothing to print
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 4
+
+Which developer: Valve
+
+Which year: 2002
+
+Nothing to print
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 4
+
+Which developer: Valve
+
+Which year: 2018
+
+Games made by Valve and released in 2018:
+Artifact
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 5
+
+Which genre: Massively
+
+Nothing to print
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 5
+
+Which genre: Racing
+
+Games with Racing genre and without a discount:
+Totally Unbalanced, High Octane Drift, Epic Roller Coasters, Adventure Climb VR, Orborun, RaceRoom Racing Experience, Riding Club Championships, Need For Speed: Hot Pursuit, FORWARD, Hello Kitty and Sanrio Friends Racing, Classic Racers, Aquadelic GT, Death Rally (Classic), Crossout, Horse Riding Tales, SEQUENCE STORM, Kreedz Climbing, Blueshift, Roadclub: League Racing, Idle Racing GO: Clicker Tycoon, RC Plane 3, Meteor Shower, The Floor Is Really Cheap Lava, EV3 - Drag Racing, The Blue Box, Ludicrous Speed, Test Drive: Ferrari Racing Legends, Faceted Flight, Wrecked, Need for Speed: Shift, My Paper Boat, AeroChopper, Zquirrels Jump, VirZOOM Arcade, Metal War Online: Retribution, Trials 2: Second Edition, Incline, Cube Racer, N2O: Nitrous Oxide, FIRST STEAM GAME VHS - COLOR RETRO RACER : MILES CHALLENGE, Dyad, Victory: The Age of Racing, Monster Trucks Nitro , Copa Petrobras de Marcas, Racecar.io, Bang Bang Car, Off-Road Super Racing, Qbike: Crypto Motorcycles, Road Dogs, Impulse of War, Ahlman Arcade 2018, Qbike: Cyberpunk Motorcycles, Shift 2 Unleashed, InCell VR, Rail Adventures - VR Tech Demo, Buggy, VR Triber, Wheel Riders Online OBT, Assault Corps 2, Christmas Race 2, Blonde Driver, Road Scars: Origins, Cart Racer, Wacky Wings VR, My RC Buggy! VR, JDM Tuner Racing, J.U.R : Japan Underground Racing, ConcPerfect 2017, Dumbass Drivers!, Pixel Car, Cars with Guns: It's About Time, Trafic Road Rush, Drift Stunt Racing 2019, Race, Dubstep Abasralsa, ZoneDriver, Go-Kart Racing, Time To Parkour, Voxel Race, Bikour!, Russian AYE Race, Battle Riders, Snake Party, Yet Another Survival Game, Drive//Shaft, Babycar Driver, Pixel Traffic: Highway Racing, Stunt Toys, Thick Air, Ball Out, Police Patrol, Stickman Racer Road Draw 2, Premier Buggy Racing Tour, Raceland, Ultimate Rock Crawler, Cyberline Racing, PhysDrive, Roll'd, Rainbow Duck, CYBER JOLT (VR), Hardcore ZBoy, Fairy Escape, Spermination, Music Racer, Primal Pursuit, Retro Parking, Draw Rider, Degrees, Pixel Traffic: Risky Bridge, Wheelz2, Cranks and Goggles, Real Drift, Grape Jelly, Drift Tuner 2019, Highway of death, AI Dummy, Police Air Transporter, PASHTET, Trigger Runners, Extreme Forklifting 2, Try Hard Parking, Calibre 10 Racing, Trucker, Sky Valley, Bambino Rally 3, PAKO - Car Chase Simulator, Jet Car Stunts, Street Racing Syndicate, AceSpeeder3, Draw Rider 2, Calvin Tucker's Farm Animal Racing, MegaRace 2, Superflight, STANDBY, Slipstream 5000, OutDrive, Glacier 3: The Meltdown, Pet Squad Racing, Ride 'em Low, MegaRace 1, Rocket Ski Racing, Crash And Burn Racing, Burnout Drift, Drive Isle, BSL Winter Games Challenge, MegaRace 3, Tomato Way, FLASHOUT 2, Wild Animal Racing, Zombie Derby, Zombie Derby 2, RACE 07, Power Hover, Jumps, Pixel Traffic: Circle Rush, One Giant Leap, Table Top Racing: World Tour, Rainy Day Racer, Z Runaway, Future Aero Racing S Ultra, 3Gun Nation VR, AUTOCROSS MADNESS, RC Fun City, Neon Universe, Super GTR Racing, Death Stair, Night City 2177, BattleTrucks, Dead End Road, SinaRun, RC Cars, Unpossible, Swipecart, Beeftacular, Jones On Fire, Gumboy Tournament, Chromadrome 2, Death Track�: Resurrection, CrazyCars3D, P-Walker's Simulation, A.I.M. Racing, Camper Jumper Simulator, Flight Unlimited Las Vegas, Race for Tuning, Slowdrive, Supersonic Tank Cats, VOLTED, Dude Simulator 2, Super Laser  Racer, Earn to Die 2, Super Night Riders, Zero Gear, Ultimate Racing 2D, WaveLand, Synthwave Dream '85, DriftForce, Bike Rush, Mindball Play, StuntMANIA Reloaded, Round Mars, Blue-Collar Astronaut, iO, Car Crash Online, Tacopocalypse, Speed Kills, Throttle Powah VR, Riskers, ZEROCAR: Future Motorsport, Find the Oil Racing Edition, RC Mini Racers, Simple Racing, Bike of the Wild, Multirotor Sim 2, Janky Tanks, Super Amazeballs, Mountain Racing, moto RKD dash SP, Stay Safe, Muddledash, Street Legal Racing: Redline v2.3.1, PAKO 2, Dino Run DX, TrickStyle, Where's My Mommy?, Russian Roads, Hyperun, Hard Truck Apocalypse: Rise Of Clans / Ex Machina: Meridian 113, Extreme-G 2, God Simulator, Duck Life: Space, Sky To Fly: Faster Than Wind, Sky to Fly: Soulless Leviathan, Tile Rider, Jet Racing Extreme: The First Encounter, RoadkillerZ, Crash Drive 2, OmniBus, Crash Wheels, Goscurry, Monster Truck Destruction, Alpine Ski VR, Drift Zone, nail'd, Off-Road Drive, Scuttlers, Demon Truck, Just Get Through, Dub Dash, Riptide GP2, Marble Race, Teddy Floppy Ear - The Race, Carmageddon TDR 2000, Snuggle Truck, MiniOne Racing, RollerForce, Wacky Wheels, Micro Pico Racers, GTR - FIA GT Racing Game, Crazy Buggy Racing, Space Warp, Racer 8, Tractorball, Void 21, Gas Guzzlers: Combat Carnage, Grass Max, VR RunningJoe, Extreme Formula Championship, Racing Glider, Krautscape, Garfield Kart, ZiL Truck RallyCross, High On Racing, King Of Dirt, Drift King: Survival, Renzo Racer, World Truck Racing, Mini Z Racers Turbo, MotoGP�13, MotoGP�14, Lost Wing, Dog Sled Saga, Little Racers STREET, Xpand Rally Xtreme, Mercury Race, Crash Time 3, Endless Winter, Defunct, Hotlap Heroes, Hard Truck Apocalypse / Ex Machina, Miami Cruise, Diesel Guns, GTR 2 FIA GT Racing Game, GT Legends, Street Heat, Hypertrain, Xpand Rally, Burning Cars, VThree, Rage Runner, Heroes of the Seven Seas VR, RC-AirSim - RC Model Airplane Flight Simulator, HTR+ Slot Car Simulation, Redline, Vangers, Street Arena, MadOut Ice Storm, Dexterity Ball 3D�, Cute Girls VR, Go Cabbies!GB, ThunderWheels, WARMA, Mantis Burn Racing�, Dream Car Builder, WRC 5 FIA World Rally Championship, WRC 4 FIA World Rally Championship, Riptide GP: Renegade, Marble Skies, Cross Racing Championship Extreme, Clutch, WHEEL TRAVEL, Trap Labs, Slipstream, Super Grav, Nimbus, SmuggleCraft, The Drone Racing League Simulator, DUCATI - 90th Anniversary, Team Racing League, Glider Island, Moto VR, Chalo Chalo, Burnin' Rubber 5 HD, Rock of Ages, Road Rage, STAR WARS� Episode I Racer, Thrillville�: Off the Rails�, MXGP - The Official Motocross Videogame, Pranky Cat, BAFL - Brakes Are For Losers, Nirvana Pilot Yume, Sweet Escape VR, Rush Bros., Metal Drift, Biathlon Battle VR, Sprint Cars Road to Knoxville, Radial-G : Racing Revolved, Sledgehammer / Gear Grinder, SuperTrucks Offroad, Spectra, Breakneck, DESPOILER, Motorbike, Drive!Drive!Drive!, Gumball Drift, Micro Machines World Series, VALENS, Wrecked Destruction Simulator, Drift Legends, Switch Galaxy Ultra, Super Kids Racing, Race & Destroy, Switchcars, Fermi's Path, Link: The Unleashed Nexus, Breaking Fast, Moto Racer Collection, Climbey, BlazeRush, MX vs. ATV Unleashed, 18 Wheels of Steel: American Long Haul, Angel Express [Tokkyu Tenshi], LocoCycle, Virtual SlotCars, Screamer 2, RUMP! - It's a Jump and Rump!, Carmageddon Max Pack, iRacing, SkyDrift, Formula Truck 2013, Carmageddon 2: Carpocalypse Now, Post Apocalyptic Mayhem, Race The Sun, JumpJet Rex, Super Toy Cars, Toy Plane Heroes, Death Rally, Ignition, Ignite, MadOut, Screamer, Giana Sisters: Dream Runners, KART CHASER : THE BOOST VR, Zombie Driver HD, Harold, Bang Bang Racing, Virtually Impossible, Quantum Rush Champions, SCHOOL SIMULATOR MULTIPLAYER, Fireburst, Corona MotorSport, DragonWingsVR, Horse Racing 2016, Coffin Dodgers, One More Roll, Neon Seoul: Outrun, Bears Can't Drift!?, RAZED, HOT GIRLS VR, VR STOCK CAR RACERS, Desert Child, Star Drift, Fancy Skiing 2: Online, gRally, Crashday Redline Edition, Race Arcade, Absolute Drift, Star Rangers� XE, Urban Trial Playground, Rocket Boots Mania, NASCAR Heat 3, Super Pilot, Snow Moto Racing Freedom, Urban Trial Freestyle, Aqua Moto Racing Utopia, VR Formula, MXGP2 - The Official Motocross Videogame, MotoGP�15, Valentino Rossi The Game, CarX Drift Racing Online, Pure Rock Crawling, WRC 6 FIA World Rally Championship, Super Impossible Road, Super Pixel Racers, Party Crashers, Super Indie Karts, Homebrew - Patent Unknown, Don't Look Down, BREAK ARTS II, Nippon Marathon, Guts and Glory, SRC: Sprint Robot Championship, Rock of Ages 2: Bigger & Boulder�, Danger Zone, Xenon Racer, Insane 2, Moto Racer  4, BallisticNG, Eat, Sleep, Bet, Repeat, ATV Drift & Tricks, Meow Motors, The Snowboard Game, All-Star Fruit Racing, Lightfield HYPER Edition, Virtual Race Car Engineer 2018, Rise: Race The Future, Polyball, Runbow, Toybox Turbos, SpeedRunners, Stock Car Extreme, RC Simulation 2.0, Road to Ballhalla, Retro City Rampage� DX, My Summer Car, Action Henk, Monster League, Obliteracers, VR Karts SteamVR, Good Boy!, TrackMania� Stadium, FURIDASHI: Drift Cyber Sport, Sexy Miss, Driver� Parallel Lines, The Next Penelope, Disney�Pixar Cars: Radiator Springs Adventures, Assetto Corsa, V-Racer Hoverbike, RIDE, TRON RUN/r, Disney�Pixar Cars Mater-National Championship, DYSTORIA, S�bastien Loeb Rally EVO, TO THE TOP, FutureGrind, Antigraviator, Disney�Pixar Cars Toon: Mater's Tall Tales, Split/Second, Disney�Pixar Cars, TAPSONIC BOLD, Crayola Scoot, Redout: Enhanced Edition, Disney�Pixar Cars 2: The Video Game, Setup Developer Tool 2018, Vector 36, Horse Riding Deluxe, Danger Zone 2, Forklift Simulator 2019, Planetoid Pioneers, Ultra Off-Road 2019: Alaska, The Karters, Flying Aces - Navy Pilot Simulator, Truck Racer, Off-Road Paradise: Trial 4x4, Qvadriga, Car Mechanic Simulator 2015, Car Mechanic Simulator 2018, Riding Out, Motorama, Distance, Gas Guzzlers Extreme, EmergeNYC, Trailmakers, BeamNG.drive, Descenders, City Car Driving, DiRT Rally 2.0, Automobilista, Horizon Chase Turbo, MotoGP�18, Sonic & SEGA All-Stars Racing, Monster Energy Supercross - The Official Videogame, MotoGP�17, MXGP3 - The Official Motocross Videogame, Crazy Taxi, Steel Rats�, rFactor, MUD Motocross World Championship, Ridge Racer� Unbounded, VR Regatta - The Sailing Game, MX vs. ATV Reflex, Sprint Vector, Wrench, GRIP: Combat Racing, Ride 2, Atoms, Gravel, Sleeping Dogs: Definitive Edition, rFactor 2, Trials of the Blood Dragon, Monster Energy Supercross - The Official Videogame 2, MXGP PRO, WRC 7 FIA World Rally Championship, JetX VR, Motorsport Manager, Revhead, Gotcha Racing 2nd, KartKraft�, RIDE 3, Kart Racing Pro, VRC PRO, BAJA: Edge of Control HD, TrackMania� Valley, TrackMania� Canyon, Trackmania� Lagoon, MX vs. ATV Supercross Encore, Trials Fusion�, New Retro Arcade: Neon, Trials� Rising, Trials Evolution: Gold Edition, V-Rally 4, Wreckfest, MX vs ATV All Out, The Crew�, Can't Drive This, FUTURE GPX CYBER FORMULA SIN VIER, Need for Spirit: Off-Road Edition, Trackmania� Turbo, Virtual Surfing, The Crew� 2, Assetto Corsa Competizione, AccuRC 2
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 6
+
+Which developer: Behaviour Digital Inc.
+
+Nothing to print
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 6
+
+Which developer: Egosoft
+
+Games made by Egosoft which offer discount:
+X3: Reunion, X4: Foundations
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 7
+
+Thank you.

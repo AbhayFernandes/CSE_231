@@ -1,0 +1,17 @@
+'\nEnter {} file: '
+'\nNo Such file'
+'\nWhich year: '
+"\nPlease enter a valid year"
+'\nWhich year: '
+"\nGames released in {}:"
+"\nNothing to print"
+'\nWhich developer: '
+"\nGames made by {}:"
+'\nWhich genre: '      
+"\nGames with {} genre:"
+"\nGames made by {} and released in {}:"
+"\nGames with {} genre and without a discount:"
+"\nGames made by {} which offer discount:"
+"\nInvalid option"
+"\nThank you."
+        

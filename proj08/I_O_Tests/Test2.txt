@@ -1,0 +1,50 @@
+
+Enter games file: games_clean.csv
+
+Enter discount file: discount.csv
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 4
+
+Which developer: Egosoft
+
+Which year: 2006
+
+Games made by Egosoft and released in 2006:
+X3: Reunion, X2: The Threat
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 4
+
+Which developer: Valve
+
+Which year: 2018
+
+Games made by Valve and released in 2018:
+Artifact
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 7
+
+Thank you.

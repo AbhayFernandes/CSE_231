@@ -1,6 +1,5 @@
 ###########################################################
 #  Computer Project #7
-#
 #  Algorithm
 #    1.  Print a welcome message
 #    2.  Prompt the user for a file name

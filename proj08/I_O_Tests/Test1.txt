@@ -1,0 +1,91 @@
+
+Enter games file: games_clean.csv
+
+Enter discount file: discount.csv
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 1
+
+Which year: 2006
+
+Games released in 2006:
+688(I) Hunter/Killer, Advent Rising, Call of Duty: United Offensive, Call of Duty�, Call of Duty� 2, Company of Heroes, DEFCON, Dangerous Waters, Dark Messiah of Might & Magic, Disciples II: Gallean's Return, Disciples II: Rise of the Elves , Earth 2160, FlatOut 2�, Fleet Command, GUN�, Garry's Mod, Geneforge 4: Rebellion, Ghost Master�, Gumboy - Crazy Adventures�, Half-Life 2: Episode One, Half-Life Deathmatch: Source, Heavy Weapon Deluxe, Heroes of Annihilated Empires, Iron Warriors: T - 72 Tank Command , Poker Superstars II, Psychonauts, Red Orchestra: Ostfront 41-45, RoboBlitz, Shadowgrounds, SiN Episodes: Emergence, Sid Meier's Civilization� III Complete, Sid Meier's Civilization� IV, Space Empires IV Deluxe, Space Empires V, Sub Command, Total War: MEDIEVAL II � Definitive Edition, Uplink, Vegas: Make It Big�, X2: The Threat, X3: Reunion, Xpand Rally, Zuma Deluxe
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 1
+
+Which year: 2002
+
+Games released in 2002:
+Mafia
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 2
+
+Which developer: Valve
+
+Games made by Valve:
+Artifact, The Lab, Dota 2, Counter-Strike: Global Offensive, Portal 2, Day of Defeat: Source, Left 4 Dead 2, Left 4 Dead, Team Fortress 2, Portal, Half-Life 2: Episode Two, Half-Life 2: Episode One, Half-Life Deathmatch: Source, Counter-Strike: Source, Half-Life 2, Half-Life: Source, Half-Life 2: Deathmatch, Counter-Strike: Condition Zero, Day of Defeat, Deathmatch Classic, Counter-Strike, Ricochet, Team Fortress Classic, Half-Life
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 2
+
+Which developer: Egosoft
+
+Games made by Egosoft:
+X4: Foundations, X Rebirth VR Edition, X Rebirth, X: Beyond the Frontier, X: Tension, X3: Terran Conflict, X3: Reunion, X2: The Threat
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 3
+
+Which genre: Gore
+
+Games with Gore genre:
+Ski Sniper, Save the Ninja Clan, Hello Charlotte EP2: Requiem Aeternam Deo, TheNightfall, Out of Ammo: Death Drive, WARMA, CTHON, Mayhem Triple, Drunkenpants, Darkwood, Warhammer 40,000: Dawn of War III, Bulletstorm: Full Clip Edition, Eternity Warriors� VR, Brut@l, The Way We All Go, Zombie Derby, Not Dying Today, Lucius, Organ Quarter, Vikings - Wolves of Midgard, Inquisitor, Hinterhalt, Protonwar, Kindergarten, DreadOut: Keepers of The Dark, Trash Story, Fresh Body, Fear of Clowns, Drive-By Hero, Mike Dies, Viscera Cleanup Detail: Santa's Rampage, Deadly Premonition: The Director's Cut, High Hell, Sorcery Jokers All Ages Version, Creature Romances: Kokonoe Kokoro, Dragon Climax, DUNGEONS OF CHAOS, Battle of Red Cliffs VR, The Mexican Dream, Autumn Dream, Pavlov VR, Gachimuchi Reloaded, DOOM VFR, A Robot Named Fight!, Zombie Derby 2, Season's Beatings, Rooks Keep, Penumbra Overture, Bean Battles, Beast Battle Simulator, The Wendigo, Silenced: The House, Empty Town, Survival VR, Versus World, Clawface, Outlast 2, Paranormal Activity: The Lost Soul, Let Them Come, Death's Hangover, The Miskatonic, Last Rites, Pegasus-5: Gone Astray, Outbreak: The New Nightmare, Ultimate Epic Battle Simulator, Dustwind, Serious Sam's Bogus Detour, RAID: World War II, Demon's Rise - War for the Deep, Outbreak, Stonewall Penitentiary, Mercury: Cascade into Madness, BERSERK and the Band of the Hawk, SturmFront - The Mutant War: �bel Edition, Transparent Black, Belko VR: An Escape Room Experiment, Redneck Rampage, Rage Wars, Close Your Eyes [Old Version], White Mirror, Maximum Action, Just Ignore Them, Tourists Kidnapped a Little Bear, Howard Phillips Lovecar, Organosphere, Guts and Glory, Salt and Sanctuary, Welcome to the Game, Darkness Assault, Shooty Squad, Penumbra: Black Plague Gold Edition, They have HORNS, South Park�: The Fractured But Whole�, Survive the Nights, Friday the 13th: Killer Puzzle, Demon's Rise - Lords of Chaos, Putrefaction 2: Rumble in the hometown, Doors Quest Demo, Bannerman, Gauge Of Rage, Possessed, The Long Reach, GARAGE: Bad Trip, Helltown, John Lazarus - Episode 1: Dead Man's Origin, Unforgiving - A Northern Hymn, SG/ZH: School Girl/Zombie Hunter, CAYNE, SACRALITH : The Archer`s Tale, Red Faction Guerrilla Re-Mars-tered, Redemption: Saints And Sinners, DYING: Reborn, Forgotten Hill Mementoes, USA 2020, Super Samurai Rampage, Uventa, The Inevitability, Follower:Sacrifice, Exoplanet: First Contact, OK/NORMAL, Red Wake Carnage, Gil's Lucid Dreams, Feral Fury, Sweeper Zero, Death Toll, Bullet Witch, War Of The Zombie, Vicious Attack Llama Apocalypse, OnsenVR, I fell from Grace, Russian Gangsta In HELL, TRAFICO, Zero Escape: The Nonary Games, The Falconers: Moonlight, Eternal Dread, DEATHPIT 3000, Cleansuit, The Raven Remastered, ShyChess, Dinosaur Hunt First Blood, Putrefaction 2: Void Walker, Zombie Desperation, Dimension Hunter VR, Z. Year One, One Of The Last, The Basilisk, 123 Slaughter Me Street 2, Last Hours Of Jack, Locked Fears, Mad Sector, Kickshot, SPACE-FRIGHT, Don't Feed, The Goatman, DreadEye VR, Zombie City, Dead Alliance�, Hidden Dragon: Legend, To Hell with Hell, Paralysis, The Road to Hades, TENET, Cold Space, The Last Conflict, Polygon Hero, Drumpf: Rise Up, Libertonia!, Take the Dream IX, LINCH, Gates Of Nowhere, Sexy Serial Killer, Dead Purge: Outbreak, Autumn Night 3D Shooter, The Far Frontier, Warhammer: Vermintide VR - Hero Trials, Bio Inc. Redemption, SYREN, The Other Side Of The Screen, Cynoclept: The Game, Donuts'n'Justice, A Dump in the Dark, Beyond the Wall, Apocryph: an old-school shooter, Combat Tested, Grandpa, John, The Zombie, Sorry. (Entschuldigung) ~ A Psychological Horror Visual Novel, POSTWORLD, Dubstep Abasralsa, R.O.V.E.R., Biotoxin: The Dark Days, Pillage, Cruel Arena, Russian Prisoner VS Nazi Zombies, Beasts&Chests, America's Retribution, Midnight Ultra, Metal Assault, Dead Ground:Arena, Ben and Ed - Blood Party, Surgeon Simulator: Experience Reality, A Light in the Dark, Later On, Zombie Playground�, 25 Cadre of Death, EMPORIUM, Mortos, West of Red, 2017 VR, Fastigium: Dead End, Zombie Driver HD, Seeking Evil: The Wendigo, I Want Toilet!!!!!!, Venal Soul (Chapter One), Pembrey, The Last Patient, Mist of the Dark, The SoulKeeper VR, Mental Asylum VR, Trip in HELL, A Demon's Game - Episode 1, Overcoming Pain, Greenwood the Last Ritual, Ninja Avenger Dragon Blade, Space of Darkness, Kama Bullet Heritage, Zanshin, Killing Time, A Bloody Night, Without Escape, SURV, Cosmic Awakening VR, Visceral Cubes, Aztecalypse, Evil Park, Minotaur, Dogolrax, Summer Nightmare, Tomato Way 2, Fog Of War - Free Edition, World of One, Hot Mars 69, Pawn, Glaive, Ino, Child Phobia: Nightcoming Fears, Knights Hunt, Reboant Demo, Final Rest, Draconic Order VR, Lord Darydikilkil, Trespassers, LAST WAR 2044, WTF, Band of Defenders, Locked In VR, Near Death Experience, Project RPG Remastered, Harts, The Outpost Nine: Episode 1, Soldiers of the Universe, Bloody Glimpse, Phobia, Nightmare Simulator, Behind You, It Lurks in the Woods, Soldier Sortie :VR Agent 006, AMPLITUDE: A Visual Novel, Strike Team Hydra, Z-End, Redium, Run!ZombieFood!, Fog of War, Olorun: Theocracy, Seven Mysteries: The Last Page, The Apartment, Infernales, Dusk Of Confinement, VR Chair Games, Coaster of Carnage VR, Absent Mind, VERGE:Lost chapter, The Lost Souls, Old School FOTD, Wooden House, CDF Ghostship, Good Morning, Dark Ghost RPG, GHOUL, HARP Vefa, Psi Project: Legacy, Dark Egypt, Hollow, Nightfall: Escape, Hardcore ZBoy, Advanced Gaming Platform::Epica, AMBUSH tactics, Brutal Inventions, Station 228, SLG Remix, KungFu Town VR, Employee Recycling Center, RoadkillerZ, Damage: Sadistic Butchering of Humanity, Infernales: Circles of Hell, Ghost Platoon, Psycho on the loose, Object "Cleaning", Devil In The Capital, Lone Leader, Xmas Zombie Rampage, THE LAST HUNT, The Perfect Sniper
+
+Select from the option:
+        1.Games in a certain year
+        2. Games by a Developer
+        3. Games of a Genre
+        4. Games by a developer in a year
+        5. Games of a Genre with no discount
+        6. Games by a developer with discount
+        7. Exit
+        Option: 7
+
+Thank you.
