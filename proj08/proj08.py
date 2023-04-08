@@ -1,7 +1,30 @@
 ###########################################################
 #  Computer Project #7
 #  Algorithm
-#    1. 
+#    Open files supplied by the user
+#    Read files and create dictionaries
+#    loop while not end of user input
+#        prompt user for option
+#        if option is 1
+#            prompt user for year
+#            print games released in that year
+#        if option is 2
+#            prompt user for developer
+#            print games developed by that developer
+#        if option is 3
+#            prompt user for genre
+#            print games of that genre
+#        if option is 4
+#            prompt user for developer and year
+#            print games developed by that developer in that year
+#        if option is 5
+#            prompt user for genre
+#            print games of that genre with no discount
+#        if option is 6
+#            prompt user for developer
+#            print games developed by that developer with a discount
+#        if option is 7
+#            end program
 ###########################################################
 
 
