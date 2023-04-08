@@ -47,7 +47,7 @@ class MasterTest(unittest.TestCase):
 
 
     def test_read_discount(self):
-        fp = open("discount_small1.csv",encoding='UTF-8')
+        fp = open("discount_small.csv",encoding='UTF-8')
         print("discount_small.csv")
         instructor = {"Tom Clancy's Rainbow Six Siege": 60.06, "No Man's Sky": 50.03, \
                     'SCUM': 50.07, 'X4: Foundations': 60.03, 'SkiFy': 50.0, 'X3: Reunion': 53.0}
@@ -60,7 +60,7 @@ class MasterTest(unittest.TestCase):
 
         assert student == instructor
         print("\n"+"-"*20)
-        fp = open("discount_medium1.csv",encoding='UTF-8')
+        fp = open("discount_medium.csv",encoding='UTF-8')
         print("discount_medium.csv")
         instructor = {"Tom Clancy's Rainbow Six Siege": 60.06, "No Man's Sky": 50.03, \
                     'SCUM': 50.07, 'X4: Foundations': 60.03, 'SkiFy': 50.0, 'X3: Reunion': 53.0, \
@@ -143,7 +143,7 @@ class MasterTest(unittest.TestCase):
                                         'SkiFy': ['24/01/2018', ['Blup Games'], ['Casual', 'Indie', 'Simulation'], 1, 0.504, 'Mixed', 18, 55, ['win_support']]}
 
 
-        year = 2019
+        year = 2018
         print("Year:",year)
         instructor = ['Artifact', 'Bloons TD 6', 'DayZ', 'SkiFy']
         print("Instructor:")
@@ -404,7 +404,7 @@ class MasterTest(unittest.TestCase):
                                         'SkiFy': ['24/01/2018', ['Blup Games'], ['Casual', 'Indie', 'Simulation'], 1, 0.504, 'Mixed', 18, 55, ['win_support']]}
 
 
-        discount_D = instructor = {"Tom Clancy's Rainbow Six Siege": 60.06, "No Man's Sky": 50.03, \
+        discount_D = {"Tom Clancy's Rainbow Six Siege": 60.06, "No Man's Sky": 50.03, \
                     'SCUM': 50.07, 'X4: Foundations': 60.03, 'SkiFy': 50.0, 'X3: Reunion': 53.0}
         dev = 'Valve'
         print("Developer:",dev)
