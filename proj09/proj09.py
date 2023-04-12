@@ -42,7 +42,7 @@ def read_file(fp: TextIO) -> Set[str]:
             # remove punctuation and make lowercase
             word = word.strip(string.punctuation).lower()
             # add word to set if it is not empty and is alphabetical
-            if word.isalpha() and len(word) >= 2:
+            if word != "" and word.isalpha() and len(word) >= 2:
                 out_set.add(word)
     return out_set
 
@@ -90,6 +90,8 @@ def find_completions(prefix: str, word_dic: Dict[Tuple[int, str], Set[str]]) \
             out_set.append(word_dic[(position[0], position[1])])
         else:
             return set()
+    if len(out_set) == 0:
+        return set()
     # find intersection of all sets in out_set, by creating an iterator
     # and passing it to set.intersection
     return set.intersection(*out_set)
@@ -122,7 +124,7 @@ def main():
         else:
             print(
                 f"\nThe words that completes {prefix}",
-                "are: {set_to_string(completions)}"
+                f"are: {set_to_string(completions)}"
             )
 
 
