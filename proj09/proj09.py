@@ -15,7 +15,7 @@
 #######################################################
 
 import string
-from typing import Set, Dict, Tuple, List, TextIO
+from typing import Set, Dict, Tuple, TextIO
 
 
 def open_file():
