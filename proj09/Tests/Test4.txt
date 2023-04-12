@@ -1,0 +1,26 @@
+
+Input a file name: Idir.txt
+
+Enter a prefix (# to quit): ti
+
+The words that completes ti are: tibbura, tijebbadin, tiqdimin, tislit
+
+Enter a prefix (# to quit): ad
+
+The words that completes ad are: ad, adfel
+
+Enter a prefix (# to quit): col
+
+There are no completions.
+
+Enter a prefix (# to quit): x
+
+There are no completions.
+
+Enter a prefix (# to quit): y
+
+The words that completes y are: yedel, yehlulen, yelli, yessed, yethebbir, yetran, yezzizin, yi
+
+Enter a prefix (# to quit): #
+
+Bye

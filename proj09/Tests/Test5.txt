@@ -1,0 +1,22 @@
+
+Input a file name: jerusalema.txt
+
+Enter a prefix (# to quit): zu
+
+The words that completes zu are: zuhambe, zungangishiyi
+
+Enter a prefix (# to quit): y
+
+The words that completes y are: yami
+
+Enter a prefix (# to quit): x
+
+There are no completions.
+
+Enter a prefix (# to quit): n
+
+The words that completes n are: nami, ndawo, ngilondoloze, nomcebo
+
+Enter a prefix (# to quit): #
+
+Bye

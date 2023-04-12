@@ -1,0 +1,30 @@
+
+Input a file name: ap_docs.txt
+
+Enter a prefix (# to quit): prompt
+
+The words that completes prompt are: prompt, prompted, prompting
+
+Enter a prefix (# to quit): col
+
+The words that completes col are: col, cold, coleman, collapse, collapsed, collateral, colleages, colleague, colleagues, collected, collecting, college, colleges, collett, collision, colman, colo, colombia, colombian, colombo, colonial, colony, colorado, coloradoan, colorblind, colossus, colter, columbia, column, columnist
+
+Enter a prefix (# to quit): weig
+
+The words that completes weig are: weigh, weighed, weighs, weight
+
+Enter a prefix (# to quit): abc
+
+The words that completes abc are: abc
+
+Enter a prefix (# to quit): x
+
+The words that completes x are: xinhua, xxx
+
+Enter a prefix (# to quit): covid
+
+There are no completions.
+
+Enter a prefix (# to quit): #
+
+Bye

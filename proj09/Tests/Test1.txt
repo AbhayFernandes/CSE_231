@@ -1,0 +1,26 @@
+
+Input a file name: xxyy
+
+[Error]: no such file
+
+Input a file name: melody.txt
+
+Enter a prefix (# to quit): sof
+
+The words that completes sof are: sofa, soffit
+
+Enter a prefix (# to quit): to
+
+The words that completes to are: to, tom, too, toot, tow, town
+
+Enter a prefix (# to quit):
+
+There are no completions.
+
+Enter a prefix (# to quit): abc
+
+There are no completions.
+
+Enter a prefix (# to quit): #
+
+Bye

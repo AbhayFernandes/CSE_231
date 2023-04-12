@@ -1,0 +1,22 @@
+
+Input a file name: Indila.txt
+
+Enter a prefix (# to quit): re
+
+The words that completes re are: recommence, recommences, remue, revient
+
+Enter a prefix (# to quit): suis
+
+The words that completes suis are: suis
+
+Enter a prefix (# to quit): peu
+
+The words that completes peu are: peu, peur
+
+Enter a prefix (# to quit): x
+
+There are no completions.
+
+Enter a prefix (# to quit): #
+
+Bye
