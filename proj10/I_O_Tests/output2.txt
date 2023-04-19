@@ -1,0 +1,267 @@
+
+Aces High Card Game:
+     Tableau columns are numbered 1,2,3,4.
+     Only the card at the bottom of a Tableau column can be moved.
+     A card can be moved to the Foundation only if a higher ranked card 
+     of the same suit is at the bottom of another Tableau column.
+     To win, all cards except aces must be in the Foundation.
+     
+Input options:
+    D: Deal to the Tableau (one card on each column).
+    F x: Move card from Tableau column x to the Foundation.
+    T x y: Move card from Tableau column x to empty Tableau column y.
+    R: Restart the game (after shuffling)
+    H: Display the menu of choices
+    Q: Quit the game        
+
+
+stock      tableau     foundation
+ XX      J♥  3♣  2♥  5♥ 
+
+Input an option (DFTRHQ): f 2
+
+Error, cannot move  3♣.
+
+stock      tableau     foundation
+ XX      J♥  3♣  2♥  5♥ 
+
+Input an option (DFTRHQ): f 1
+
+Error, cannot move  J♥.
+
+stock      tableau     foundation
+ XX      J♥  3♣  2♥  5♥ 
+
+Input an option (DFTRHQ): f 3
+
+stock      tableau     foundation
+ XX      J♥  3♣      5♥      2♥
+
+Input an option (DFTRHQ): f 1
+
+Error, cannot move  J♥.
+
+stock      tableau     foundation
+ XX      J♥  3♣      5♥      2♥
+
+Input an option (DFTRHQ): t 1 2
+
+Error, target column is not empty: 2
+
+stock      tableau     foundation
+ XX      J♥  3♣      5♥      2♥
+
+Input an option (DFTRHQ): t 3 4
+
+Error, target column is not empty: 4
+
+stock      tableau     foundation
+ XX      J♥  3♣      5♥      2♥
+
+Input an option (DFTRHQ): f 4
+
+stock      tableau     foundation
+ XX      J♥  3♣              5♥
+
+Input an option (DFTRHQ): t 3 4
+
+Error, no card in column: 3
+
+stock      tableau     foundation
+ XX      J♥  3♣              5♥
+
+Input an option (DFTRHQ): d
+
+stock      tableau     foundation
+ XX      J♥  3♣  A♦  4♥      5♥
+         K♠  A♣         
+
+Input an option (DFTRHQ): h
+     
+Input options:
+    D: Deal to the Tableau (one card on each column).
+    F x: Move card from Tableau column x to the Foundation.
+    T x y: Move card from Tableau column x to empty Tableau column y.
+    R: Restart the game (after shuffling)
+    H: Display the menu of choices
+    Q: Quit the game        
+
+
+stock      tableau     foundation
+ XX      J♥  3♣  A♦  4♥      5♥
+         K♠  A♣         
+
+Input an option (DFTRHQ): d
+
+stock      tableau     foundation
+ XX      J♥  3♣  A♦  4♥      5♥
+         K♠  A♣  3♠  J♣ 
+         6♥  5♦         
+
+Input an option (DFTRHQ): d
+
+stock      tableau     foundation
+ XX      J♥  3♣  A♦  4♥      5♥
+         K♠  A♣  3♠  J♣ 
+         6♥  5♦  5♠  8♦ 
+         Q♠  8♥         
+
+Input an option (DFTRHQ): f 3
+
+stock      tableau     foundation
+ XX      J♥  3♣  A♦  4♥      5♠
+         K♠  A♣  3♠  J♣ 
+         6♥  5♦      8♦ 
+         Q♠  8♥         
+
+Input an option (DFTRHQ): f 3
+
+stock      tableau     foundation
+ XX      J♥  3♣  A♦  4♥      3♠
+         K♠  A♣      J♣ 
+         6♥  5♦      8♦ 
+         Q♠  8♥         
+
+Input an option (DFTRHQ): f 4
+
+stock      tableau     foundation
+ XX      J♥  3♣  A♦  4♥      8♦
+         K♠  A♣      J♣ 
+         6♥  5♦         
+         Q♠  8♥         
+
+Input an option (DFTRHQ): f 4
+
+Error, cannot move  J♣.
+
+stock      tableau     foundation
+ XX      J♥  3♣  A♦  4♥      8♦
+         K♠  A♣      J♣ 
+         6♥  5♦         
+         Q♠  8♥         
+
+Input an option (DFTRHQ): f 3
+
+Error, cannot move  A♦.
+
+stock      tableau     foundation
+ XX      J♥  3♣  A♦  4♥      8♦
+         K♠  A♣      J♣ 
+         6♥  5♦         
+         Q♠  8♥         
+
+Input an option (DFTRHQ): f 4
+
+Error, cannot move  J♣.
+
+stock      tableau     foundation
+ XX      J♥  3♣  A♦  4♥      8♦
+         K♠  A♣      J♣ 
+         6♥  5♦         
+         Q♠  8♥         
+
+Input an option (DFTRHQ): r
+
+=========== Restarting: new game ============
+
+Aces High Card Game:
+     Tableau columns are numbered 1,2,3,4.
+     Only the card at the bottom of a Tableau column can be moved.
+     A card can be moved to the Foundation only if a higher ranked card 
+     of the same suit is at the bottom of another Tableau column.
+     To win, all cards except aces must be in the Foundation.
+     
+Input options:
+    D: Deal to the Tableau (one card on each column).
+    F x: Move card from Tableau column x to the Foundation.
+    T x y: Move card from Tableau column x to empty Tableau column y.
+    R: Restart the game (after shuffling)
+    H: Display the menu of choices
+    Q: Quit the game        
+
+
+stock      tableau     foundation
+ XX      J♥  3♣  2♥  5♥ 
+
+Input an option (DFTRHQ): f 3
+
+stock      tableau     foundation
+ XX      J♥  3♣      5♥      2♥
+
+Input an option (DFTRHQ): f 2
+
+Error, cannot move  3♣.
+
+stock      tableau     foundation
+ XX      J♥  3♣      5♥      2♥
+
+Input an option (DFTRHQ): t 1 3
+
+stock      tableau     foundation
+ XX          3♣  J♥  5♥      2♥
+
+Input an option (DFTRHQ): t 2 3
+
+Error, target column is not empty: 3
+
+stock      tableau     foundation
+ XX          3♣  J♥  5♥      2♥
+
+Input an option (DFTRHQ): f 4
+
+stock      tableau     foundation
+ XX          3♣  J♥          5♥
+
+Input an option (DFTRHQ): t 1 4
+
+Error, no card in column: 1
+
+stock      tableau     foundation
+ XX          3♣  J♥          5♥
+
+Input an option (DFTRHQ): d
+
+stock      tableau     foundation
+ XX      K♠  3♣  J♥  4♥      5♥
+             A♣  A♦     
+
+Input an option (DFTRHQ): d
+
+stock      tableau     foundation
+ XX      K♠  3♣  J♥  4♥      5♥
+         6♥  A♣  A♦  J♣ 
+             5♦  3♠     
+
+Input an option (DFTRHQ): x
+
+Error in option: x
+
+Input an option (DFTRHQ): z 1
+
+Error in option: z 1
+
+Input an option (DFTRHQ): d 2 3
+
+Error in option: d 2 3
+
+Input an option (DFTRHQ): d
+
+stock      tableau     foundation
+ XX      K♠  3♣  J♥  4♥      5♥
+         6♥  A♣  A♦  J♣ 
+         Q♠  5♦  3♠  8♦ 
+             8♥  5♠     
+
+Input an option (DFTRHQ): f 2
+
+Error, cannot move  8♥.
+
+stock      tableau     foundation
+ XX      K♠  3♣  J♥  4♥      5♥
+         6♥  A♣  A♦  J♣ 
+         Q♠  5♦  3♠  8♦ 
+             8♥  5♠     
+
+Input an option (DFTRHQ): q
+
+You have chosen to quit.
