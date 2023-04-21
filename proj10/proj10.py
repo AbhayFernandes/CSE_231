@@ -1,4 +1,4 @@
-import cards  # required !!!
+import cards # ignore
 from typing import Tuple, List
 
 RULES = '''
