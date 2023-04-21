@@ -1,4 +1,3 @@
-
 import random
 
 class Card( object ):
@@ -82,8 +81,8 @@ class Deck( object ):
 
     def shuffle( self ):
         """ Shuffle deck using shuffle method in random module. """
-        random.seed(10)  # for consistent testing
-        random.shuffle(self.__deck)
+        #random.shuffle(self.__deck)
+        pass
 
     def deal( self ):
         """ Return top card from deck (return None if deck empty). """

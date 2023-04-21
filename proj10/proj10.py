@@ -1,8 +1,6 @@
 import cards  # required !!!
 from typing import Tuple, List
-import sys
-#define input file:
-sys.stdin = open('input_win.txt', 'r')
+
 RULES = '''
 Aces High Card Game:
      Tableau columns are numbered 1,2,3,4.
@@ -45,9 +43,11 @@ def validate_move_to_foundation( tableau: List[List[cards.Card]], from_col: int 
     this function to determines if a requested move to the foundation is valid.
     '''
     if not tableau[from_col]:
+        print("\nError, empty column:".format(from_col + 1))
         return False
     card = tableau[from_col][-1]
     if card.value() == 1:
+        print("\nError, cannot move {}.".format(card))
         return False
     for col in tableau:
         if col:
@@ -57,6 +57,7 @@ def validate_move_to_foundation( tableau: List[List[cards.Card]], from_col: int 
                 return True
             if col[-1].rank() > card.rank() and col[-1].suit() == card.suit():
                 return True
+    print("\nError, cannot move {}.".format(card))
     return False
 
     
@@ -66,12 +67,16 @@ def move_to_foundation( tableau: List[List[cards.Card]], foundation: List[cards.
 
 
 def validate_move_within_tableau( tableau: List[List[cards.Card]], from_col: int, to_col: int) -> bool:
+    if tableau[to_col] != []:
+        print("\nError, target column is not empty: {}".format(to_col + 1))
+        return False
     if not tableau[from_col]:
+        print("\nError, no card in column: {}".format(from_col + 1))
         return False
     if tableau[to_col] == []:
         return True
-    else:
-        return False  # stub; delete and replace it with your code
+    return False
+
 
 
 def move_within_tableau( tableau: List[List[cards.Card]], from_col: int, to_col: int ):
@@ -88,9 +93,7 @@ def check_for_win( tableau: List[List[cards.Card]], stock: cards.Deck ) -> bool:
                 cards.append(card)
         # check if all cards are aces:
         for card in cards:
-            print(card)
             if card.value() != 1:
-                print("not aces")
                 return False
         return True
     return False  # stub; delete and replace it with your code   
@@ -146,50 +149,54 @@ def get_option() -> List:
         try:
             col = int(choice[1:].strip()) - 1
             if col < 0 or col > 3:
-                print(f"Error in option: {og}")
+                print(f"\nError in option: {og}")
                 return []
             return ['F', col]
         except:
-            print(f"Error in option: {og}")
+            print(f"\nError in option: {og}")
             return []
     elif choice[0] == 'T':
         try:
             cols = choice[1:].strip().split()
             if len(cols) != 2:
-                print(f"Error in option: {og}")
+                print(f"\nError in option: {og}")
                 return []
             col1 = int(cols[0]) - 1
             col2 = int(cols[1]) - 1
             if col1 < 0 or col1 > 3 or col2 < 0 or col2 > 3:
-                print(f"Error in option: {og}")
+                print(f"\nError in option: {og}")
                 return []
             return ['T', col1, col2]
         except:
-            print(f"Error in option: {og}")
+            print(f"\nError in option: {og}")
             return []
     else:
-        print(f"Error in option: {og}")
-    return []   # stub; delete and replace with your code
+        print(f"\nError in option: {og}")
+        return []
         
 def main():
     print(RULES)
     print(MENU)
     stock, tableau, foundation = init_game()
+    skip = False
     while True:
-        display(stock, tableau, foundation)
+        if check_for_win(tableau, stock):
+            print("\nYou won!")
+            break
+        if not skip:
+            display(stock, tableau, foundation)
+        skip = False
         option = get_option()
         if option == []:
+            skip = True
             continue
         if option[0] == 'Q':
-            if check_for_win(tableau, stock):
-                print("\nYou won!")
-            else:
-                print("\nYou have chosen to quit.")
+            print("\nYou have chosen to quit.")
             break
         elif option[0] == 'H':
             print(MENU)
         elif option[0] == 'R':
-            print("=========== Restarting: new game ============")
+            print("\n=========== Restarting: new game ============")
             print(RULES)
             print(MENU)
             stock, tableau, foundation = init_game()
@@ -199,9 +206,8 @@ def main():
             move_to_foundation(tableau, foundation, option[1])
         elif option[0] == 'T':
             move_within_tableau(tableau, option[1], option[2])
-        else:
-            print("Error in option")
-            continue
+
+
 
 if __name__ == '__main__':
      main()
